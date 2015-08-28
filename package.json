@@ -1,0 +1,37 @@
+{
+	"main": "js/dist/persistent.js",
+	"version": "0.0.0",
+	"bugs": {
+		"url": "https://github.com/aureooms/js-persistent/issues"
+	},
+	"spm": {
+		"main": "js/dist/persistent.js"
+	},
+	"keywords": [
+		"bricks",
+		"data",
+		"ender",
+		"javascript",
+		"js",
+		"persistent",
+		"structures"
+	],
+	"license": "AGPL-3.0",
+	"description": "persistent data structures code bricks for JavaScript",
+	"scripts": {
+		"test": "./node_modules/.bin/aureooms-node-package-test",
+		"doc": "./node_modules/.bin/groc",
+		"build": "./node_modules/.bin/aureooms-node-package-build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aureooms/js-persistent.git"
+	},
+	"devDependencies": {
+		"aureooms-node-package": "^5.0.2"
+	},
+	"dependencies": {},
+	"homepage": "http://aureooms.github.io/js-persistent/",
+	"author": "aureooms",
+	"name": "aureooms-js-persistent"
+}
