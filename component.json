@@ -1,0 +1,11 @@
+{
+	"version": "0.0.0",
+	"license": "AGPL-3.0",
+	"description": "persistent data structures code bricks for JavaScript",
+	"main": "js/dist/persistent.js",
+	"scripts": [
+		"js/dist/persistent.js"
+	],
+	"repo": "aureooms/js-persistent",
+	"name": "aureooms-js-persistent"
+}
