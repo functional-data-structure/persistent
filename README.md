@@ -1,7 +1,7 @@
 [js-persistent](http://aureooms.github.io/js-persistent)
 ==
 
-persistent data structures code bricks for JavaScript
+Persistent data structures code bricks for JavaScript. Parent is [aureooms/js-data-structures](https://github.com/aureooms/js-data-structures).
 
 [![NPM license](http://img.shields.io/npm/l/aureooms-js-persistent.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-persistent/master/LICENSE)
 [![NPM version](http://img.shields.io/npm/v/aureooms-js-persistent.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-persistent)
@@ -93,3 +93,9 @@ Alternatively, you can use any tool mentioned [here](http://bower.io/docs/tools/
 ```js
 require( [ "aureooms-js-persistent" ] , function ( persistent ) { ... } ) ;
 ```
+
+## Children
+
+This package has several children:
+
+  - [aureooms/js-fingertree](https://github.com/aureooms/js-fingertree): finger trees code bricks for JavaScript
