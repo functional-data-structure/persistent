@@ -21,13 +21,23 @@ Heap.prototype.push = function ( value ) {
 
 Heap.prototype.extractMax = function ( ) {
 	const ub = this.measure( ) ;
-	const split = this.tree.splitTree( ( m ) => m >= ub ) ;
+	const split = this.tree.splitTree( ( m ) => m >= ub , max.zero( ) ) ;
 	return [ split.middle , new Heap( split.left.concat( split.right ) ) ] ;
+} ;
+
+Heap.prototype.insertValues = function ( values ) {
+
+	let s = this ;
+
+	for ( const value of values ) s = s.insert( value ) ;
+
+	return s ;
+
 } ;
 
 return {
 	empty : ( ) => new Heap( empty( max ) ) ,
-	from_iterable : ( iterable ) => new Heap( empty( max ) ).append( iterable )
+	from : ( iterable ) => new Heap( empty( max ) ).insertValues( iterable )
 } ;
 
 }

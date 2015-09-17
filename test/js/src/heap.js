@@ -2,14 +2,14 @@
 var measure = require( 'aureooms-js-measure' ) ;
 var fingertree = require( 'aureooms-js-fingertree' ) ;
 
-var empty = persistent.heap( fingertree.empty , measure.Measures.MAX ) ;
+var Heap = persistent.heap( fingertree.empty , measure.Measures.PRIO ) ;
 
 test( 'heap' , function ( assert ) {
 
-	var h = empty( ) ;
-	h.push( 1 ) ;
-	h.push( 3 ) ;
-	h.push( 2 ) ;
+	var h = Heap.empty( ) ;
+	h = h.push( 1 ) ;
+	h = h.push( 3 ) ;
+	h = h.push( 2 ) ;
 
 	var x = h.extractMax( ) ;
 	var a = x[0] ;

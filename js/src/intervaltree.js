@@ -64,7 +64,7 @@ IntervalTree.prototype.intervalMatch = function ( interval ) {
 
 return {
 	empty : ( ) => new IntervalTree( empty( M ) ) ,
-	from_iterable : ( iterable ) => new IntervalTree( empty( M ) ).append( iterable )
+	from : ( iterable ) => new IntervalTree( empty( M ) ).append( iterable )
 } ;
 
 }
