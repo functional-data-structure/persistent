@@ -2,16 +2,16 @@
 function intervaltree ( empty , M ) {
 
 const atleast = function ( k , [ _ , n ] ) {
-	return M.b.measure( k ) <= n ;
+	return k <= n ;
 } ;
 
 const greater = function ( k , [ n , _ ] ) {
-	return n > M.a.measure( k ) ;
+	return n > k ;
 } ;
 
 const matches = function* ( low , tree ) {
 
-	const xs = tree.dropUntil( ( m ) => atleast( low ) ) ;
+	const xs = tree.dropUntil( ( m ) => atleast( low , m ) ) ;
 
 	if ( xs.empty( ) ) return ;
 
@@ -21,17 +21,8 @@ const matches = function* ( low , tree ) {
 
 } ;
 
-const Interval = function ( low , high ) {
-	this.low = low ;
-	this.high = high ;
-} ;
-
 const IntervalTree = function ( tree ) {
 	this.tree = tree ;
-} ;
-
-IntervalTree.prototype.add = function ( low , high ) {
-	return new IntervalTree( this.tree.push( new Interval( low , high ) ) ) ;
 } ;
 
 IntervalTree.prototype.empty = function ( ) {
@@ -42,29 +33,91 @@ IntervalTree.prototype.measure = function ( ) {
 	return this.tree.measure( ) ;
 } ;
 
+IntervalTree.prototype.head = function ( ) {
+	return this.tree.head( ) ;
+} ;
+
+IntervalTree.prototype.tail = function ( ) {
+	return new IntervalTree( this.tree.tail( ) ) ;
+} ;
+
+IntervalTree.prototype.last = function ( ) {
+	return this.tree.last( ) ;
+} ;
+
+IntervalTree.prototype.init = function ( ) {
+	return new IntervalTree( this.tree.init( ) ) ;
+} ;
+
+IntervalTree.prototype.takeUntil = function ( predicate ) {
+	return new IntervalTree( this.tree.takeUntil( predicate ) ) ;
+} ;
+
+IntervalTree.prototype.dropUntil = function ( predicate ) {
+	return new IntervalTree( this.tree.dropUntil( predicate ) ) ;
+} ;
+
+IntervalTree.prototype.split = function ( predicate ) {
+	const [ left , right ] = this.tree.split( predicate ) ;
+	return [ new IntervalTree( left ) , new IntervalTree( right ) ] ;
+} ;
+
 IntervalTree.prototype[Symbol.iterator] = function ( ) {
 	return this.tree[Symbol.iterator]( ) ;
 } ;
 
+IntervalTree.prototype.insert = function ( interval ) {
+	const k = M.measure( interval )[0] ;
+	const [ left , right ] = this.tree.split( ( m ) => m[0] >= k ) ;
+	return new IntervalTree( left.push( interval ).concat( right ) ) ;
+} ;
+
+IntervalTree.prototype.merge = function ( other ) {
+
+	if ( other.empty( ) ) return this ;
+
+	const a = other.head( ) ;
+	const k = M.measure( a )[0] ;
+
+	const [ l , r ] = this.split( ( m ) => m[0] > k ) ;
+
+	return new IntervalTree( l.tree.push( a ).concat( r.merge( other.tail( ) ).tree ) ) ;
+
+} ;
+
+IntervalTree.prototype.insertValues = function ( values ) {
+
+	let s = this ;
+
+	for ( const value of values ) s = s.insert( value ) ;
+
+	return s ;
+
+} ;
+
 IntervalTree.prototype.intervalSearch = function ( interval ) {
 
-	if ( !atleast( interval.low , t.measure( ) ) ) return null ;
+	if ( !atleast( interval[0] , this.measure( ) ) ) return null ;
 
-	const { middle } = t.tree.splitTree( ( m ) => atleast( i , m ) , M.zero( ) ) ;
+	const k = M.measure( interval )[0] ;
 
-	return middle.low > interval.high ? null : middle ;
+	const { middle } = this.tree.splitTree( ( m ) => atleast( k , m ) , M.zero( ) ) ;
+
+	return middle[0] > interval[1] ? null : middle ;
 
 } ;
 
 IntervalTree.prototype.intervalMatch = function ( interval ) {
 
-	return matches( interval.low , this.tree.takeUntil( ( m ) => greater( interval.high ) ) ) ;
+	const k = M.measure( interval )[1] ;
+	return matches( interval[0] , this.tree.takeUntil( ( m ) => greater( k , m ) ) ) ;
 
 } ;
 
+
 return {
 	empty : ( ) => new IntervalTree( empty( M ) ) ,
-	from : ( iterable ) => new IntervalTree( empty( M ) ).append( iterable )
+	from : ( iterable ) => new IntervalTree( empty( M ) ).insertValues( iterable )
 } ;
 
 }
