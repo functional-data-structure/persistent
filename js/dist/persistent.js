@@ -212,7 +212,7 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 				return new OrdSeq(this.tree.tail());
 			};
 
-			OrdSeq.prototype.key = OrdSeq.prototype.last = function () {
+			OrdSeq.prototype.max = OrdSeq.prototype.last = function () {
 				return this.tree.last();
 			};
 
