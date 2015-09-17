@@ -99,3 +99,33 @@ require( [ "aureooms-js-persistent" ] , function ( persistent ) { ... } ) ;
 This package has several children:
 
   - [aureooms/js-fingertree](https://github.com/aureooms/js-fingertree): finger trees code bricks for JavaScript
+
+## Use
+
+```js
+let measure = require( 'aureooms-js-measure' ) ;
+let fingertree = require( 'aureooms-js-fingertree' ) ;
+
+let Seq = persistent.seq( fingertree.empty , measure.Measures.SIZE ) ;
+let Heap = persistent.heap( fingertree.empty , measure.Measures.PRIO ) ;
+let OrdSeq = persistent.ordseq( fingertree.empty , measure.Measures.KEY ) ;
+let IntervalTree = persistent.intervaltree( fingertree.empty , measure.Measures.INTERVAL ) ;
+
+let seq = Seq.from( 'abc' ) ;
+seq.get( 1 ) ; // 'a'
+
+let heap = Heap.from( [ 1 , 3 , 2 ] ) ;
+heap.extractMax( ) ; // [ 3 , Heap{1,2} ]
+
+let ordseq = OrdSeq.from( "abracadabra" ) ;
+[ ...ordseq ] ; // aaaaabbcdrr
+
+let intervaltree = IntervalTree.from( [ [ 1 , 5 ] , [ 4 , 9 ] ] ) ;
+intervaltree.intervalSearch( [ -7 , 3 ] ) ; // [ 1 , 5 ]
+intervaltree.intervalSearch( [ 7 , 12 ] ) ; // [ 4 , 9 ]
+intervaltree.intervalSearch( [ 11 , 12 ] ) ; // null
+```
+
+## References
+
+  - [Hinze and Paterson](http://staff.city.ac.uk/~ross/papers/FingerTree.pdf)
