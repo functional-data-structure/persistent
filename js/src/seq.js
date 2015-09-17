@@ -92,7 +92,7 @@ Seq.prototype.splitAt = function ( index ) {
 
 return {
 	empty : ( ) => new Seq( empty( size ) ) ,
-	from_iterable : ( iterable ) => new Seq( empty( size ) ).append( iterable )
+	from : ( iterable ) => new Seq( empty( size ) ).append( iterable )
 } ;
 
 }

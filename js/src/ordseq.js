@@ -79,9 +79,19 @@ OrdSeq.prototype.merge = function ( other ) {
 
 } ;
 
+OrdSeq.prototype.insertValues = function ( values ) {
+
+	let s = this ;
+
+	for ( const value of values ) s = s.insert( value ) ;
+
+	return s ;
+
+} ;
+
 return {
 	empty : ( ) => new OrdSeq( empty( key ) ) ,
-	from_iterable : ( iterable ) => new OrdSeq( empty( key ) ).append( iterable )
+	from : ( iterable ) => new OrdSeq( empty( key ) ).insertValues( iterable )
 } ;
 
 }
