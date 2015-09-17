@@ -89,7 +89,7 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 				var _ = _ref2[0];
 				var n = _ref2[1];
 
-				return M.b.measure(k) <= n;
+				return k <= n;
 			};
 
 			var greater = function greater(k, _ref3) {
@@ -98,7 +98,7 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 				var n = _ref32[0];
 				var _ = _ref32[1];
 
-				return n > M.a.measure(k);
+				return n > k;
 			};
 
 			var matches = regeneratorRuntime.mark(function matches(low, tree) {
@@ -107,7 +107,7 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 					while (1) switch (context$4$0.prev = context$4$0.next) {
 						case 0:
 							xs = tree.dropUntil(function (m) {
-								return atleast(low);
+								return atleast(low, m);
 							});
 
 							if (!xs.empty()) {
@@ -131,17 +131,8 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 				}, matches, this);
 			});
 
-			var Interval = function Interval(low, high) {
-				this.low = low;
-				this.high = high;
-			};
-
 			var IntervalTree = function IntervalTree(tree) {
 				this.tree = tree;
-			};
-
-			IntervalTree.prototype.add = function (low, high) {
-				return new IntervalTree(this.tree.push(new Interval(low, high)));
 			};
 
 			IntervalTree.prototype.empty = function () {
@@ -152,27 +143,130 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 				return this.tree.measure();
 			};
 
+			IntervalTree.prototype.head = function () {
+				return this.tree.head();
+			};
+
+			IntervalTree.prototype.tail = function () {
+				return new IntervalTree(this.tree.tail());
+			};
+
+			IntervalTree.prototype.last = function () {
+				return this.tree.last();
+			};
+
+			IntervalTree.prototype.init = function () {
+				return new IntervalTree(this.tree.init());
+			};
+
+			IntervalTree.prototype.takeUntil = function (predicate) {
+				return new IntervalTree(this.tree.takeUntil(predicate));
+			};
+
+			IntervalTree.prototype.dropUntil = function (predicate) {
+				return new IntervalTree(this.tree.dropUntil(predicate));
+			};
+
+			IntervalTree.prototype.split = function (predicate) {
+				var _tree$split = this.tree.split(predicate);
+
+				var _tree$split2 = _slicedToArray(_tree$split, 2);
+
+				var left = _tree$split2[0];
+				var right = _tree$split2[1];
+
+				return [new IntervalTree(left), new IntervalTree(right)];
+			};
+
 			IntervalTree.prototype[Symbol.iterator] = function () {
 				return this.tree[Symbol.iterator]();
 			};
 
+			IntervalTree.prototype.insert = function (interval) {
+				var k = M.measure(interval)[0];
+
+				var _tree$split3 = this.tree.split(function (m) {
+					return m[0] >= k;
+				});
+
+				var _tree$split32 = _slicedToArray(_tree$split3, 2);
+
+				var left = _tree$split32[0];
+				var right = _tree$split32[1];
+
+				return new IntervalTree(left.push(interval).concat(right));
+			};
+
+			IntervalTree.prototype.merge = function (other) {
+
+				if (other.empty()) return this;
+
+				var a = other.head();
+				var k = M.measure(a)[0];
+
+				var _split = this.split(function (m) {
+					return m[0] > k;
+				});
+
+				var _split2 = _slicedToArray(_split, 2);
+
+				var l = _split2[0];
+				var r = _split2[1];
+
+				return new IntervalTree(l.tree.push(a).concat(r.merge(other.tail()).tree));
+			};
+
+			IntervalTree.prototype.insertValues = function (values) {
+
+				var s = this;
+
+				var _iteratorNormalCompletion2 = true;
+				var _didIteratorError2 = false;
+				var _iteratorError2 = undefined;
+
+				try {
+					for (var _iterator2 = values[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+						var value = _step2.value;
+						s = s.insert(value);
+					}
+				} catch (err) {
+					_didIteratorError2 = true;
+					_iteratorError2 = err;
+				} finally {
+					try {
+						if (!_iteratorNormalCompletion2 && _iterator2["return"]) {
+							_iterator2["return"]();
+						}
+					} finally {
+						if (_didIteratorError2) {
+							throw _iteratorError2;
+						}
+					}
+				}
+
+				return s;
+			};
+
 			IntervalTree.prototype.intervalSearch = function (interval) {
 
-				if (!atleast(interval.low, t.measure())) return null;
+				if (!atleast(interval[0], this.measure())) return null;
 
-				var _t$tree$splitTree = t.tree.splitTree(function (m) {
-					return atleast(i, m);
+				var k = M.measure(interval)[0];
+
+				var _tree$splitTree = this.tree.splitTree(function (m) {
+					return atleast(k, m);
 				}, M.zero());
 
-				var middle = _t$tree$splitTree.middle;
+				var middle = _tree$splitTree.middle;
 
-				return middle.low > interval.high ? null : middle;
+				return middle[0] > interval[1] ? null : middle;
 			};
 
 			IntervalTree.prototype.intervalMatch = function (interval) {
 
-				return matches(interval.low, this.tree.takeUntil(function (m) {
-					return greater(interval.high);
+				var k = M.measure(interval)[1];
+				return matches(interval[0], this.tree.takeUntil(function (m) {
+					return greater(k, m);
 				}));
 			};
 
@@ -181,7 +275,7 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 					return new IntervalTree(_empty2(M));
 				},
 				from: function from(iterable) {
-					return new IntervalTree(_empty2(M)).append(iterable);
+					return new IntervalTree(_empty2(M)).insertValues(iterable);
 				}
 			};
 		}
@@ -233,12 +327,12 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 			};
 
 			OrdSeq.prototype.split = function (predicate) {
-				var _tree$split = this.tree.split(predicate);
+				var _tree$split4 = this.tree.split(predicate);
 
-				var _tree$split2 = _slicedToArray(_tree$split, 2);
+				var _tree$split42 = _slicedToArray(_tree$split4, 2);
 
-				var left = _tree$split2[0];
-				var right = _tree$split2[1];
+				var left = _tree$split42[0];
+				var right = _tree$split42[1];
 
 				return [new OrdSeq(left), new OrdSeq(right)];
 			};
@@ -253,14 +347,14 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 			OrdSeq.prototype.insert = function (value) {
 				var k = key.measure(value);
 
-				var _tree$split3 = this.tree.split(function (m) {
+				var _tree$split5 = this.tree.split(function (m) {
 					return m >= k;
 				});
 
-				var _tree$split32 = _slicedToArray(_tree$split3, 2);
+				var _tree$split52 = _slicedToArray(_tree$split5, 2);
 
-				var left = _tree$split32[0];
-				var right = _tree$split32[1];
+				var left = _tree$split52[0];
+				var right = _tree$split52[1];
 
 				return new OrdSeq(left.push(value).concat(right));
 			};
@@ -268,14 +362,14 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 			OrdSeq.prototype.deleteAll = function (value) {
 				var k = key.measure(value);
 
-				var _tree$split4 = this.tree.split(function (m) {
+				var _tree$split6 = this.tree.split(function (m) {
 					return m >= k;
 				});
 
-				var _tree$split42 = _slicedToArray(_tree$split4, 2);
+				var _tree$split62 = _slicedToArray(_tree$split6, 2);
 
-				var l = _tree$split42[0];
-				var r = _tree$split42[1];
+				var l = _tree$split62[0];
+				var r = _tree$split62[1];
 
 				var _r$split = r.split(function (m) {
 					return m > k;
@@ -296,14 +390,14 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 				var a = other.head();
 				var k = key.measure(a);
 
-				var _split = this.split(function (m) {
+				var _split3 = this.split(function (m) {
 					return m > k;
 				});
 
-				var _split2 = _slicedToArray(_split, 2);
+				var _split32 = _slicedToArray(_split3, 2);
 
-				var l = _split2[0];
-				var r = _split2[1];
+				var l = _split32[0];
+				var r = _split32[1];
 
 				return new OrdSeq(l.tree.push(a).concat(r.merge(other.tail()).tree));
 			};
@@ -312,26 +406,26 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 
 				var s = this;
 
-				var _iteratorNormalCompletion2 = true;
-				var _didIteratorError2 = false;
-				var _iteratorError2 = undefined;
+				var _iteratorNormalCompletion3 = true;
+				var _didIteratorError3 = false;
+				var _iteratorError3 = undefined;
 
 				try {
-					for (var _iterator2 = values[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-						var value = _step2.value;
+					for (var _iterator3 = values[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+						var value = _step3.value;
 						s = s.insert(value);
 					}
 				} catch (err) {
-					_didIteratorError2 = true;
-					_iteratorError2 = err;
+					_didIteratorError3 = true;
+					_iteratorError3 = err;
 				} finally {
 					try {
-						if (!_iteratorNormalCompletion2 && _iterator2["return"]) {
-							_iterator2["return"]();
+						if (!_iteratorNormalCompletion3 && _iterator3["return"]) {
+							_iterator3["return"]();
 						}
 					} finally {
-						if (_didIteratorError2) {
-							throw _iteratorError2;
+						if (_didIteratorError3) {
+							throw _iteratorError3;
 						}
 					}
 				}
@@ -436,12 +530,12 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 			};
 
 			Seq.prototype.split = function (predicate) {
-				var _tree$split5 = this.tree.split(predicate);
+				var _tree$split7 = this.tree.split(predicate);
 
-				var _tree$split52 = _slicedToArray(_tree$split5, 2);
+				var _tree$split72 = _slicedToArray(_tree$split7, 2);
 
-				var left = _tree$split52[0];
-				var right = _tree$split52[1];
+				var left = _tree$split72[0];
+				var right = _tree$split72[1];
 
 				return [new Seq(left), new Seq(right)];
 			};
