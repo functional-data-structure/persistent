@@ -3,6 +3,14 @@
 
 Persistent data structures code bricks for JavaScript. Parent is [aureooms/js-data-structures](https://github.com/aureooms/js-data-structures).
 
+```js
+let Seq = persistent.seq( fingertree.empty , SIZE ) ;
+let Heap = persistent.heap( fingertree.empty , PRIO ) ;
+let OrdSeq = persistent.ordseq( fingertree.empty , KEY ) ;
+let IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;
+```
+
+
 [![NPM license](http://img.shields.io/npm/l/aureooms-js-persistent.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-persistent/master/LICENSE)
 [![NPM version](http://img.shields.io/npm/v/aureooms-js-persistent.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-persistent)
 [![Bower version](http://img.shields.io/bower/v/aureooms-js-persistent.svg?style=flat)](http://bower.io/search/?q=aureooms-js-persistent)
