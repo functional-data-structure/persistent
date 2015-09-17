@@ -2,7 +2,7 @@
 	"main": "js/dist/persistent.js",
 	"license": "AGPL-3.0",
 	"description": "persistent data structures code bricks for JavaScript",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"ignore": [
 		"js/index.js",
 		"js/src",
