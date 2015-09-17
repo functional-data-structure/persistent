@@ -22,7 +22,7 @@ OrdSeq.prototype.tail = function ( ) {
 	return new OrdSeq( this.tree.tail( ) ) ;
 } ;
 
-OrdSeq.prototype.key =
+OrdSeq.prototype.max =
 OrdSeq.prototype.last = function ( ) {
 	return this.tree.last( ) ;
 } ;
