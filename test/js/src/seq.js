@@ -1,8 +1,10 @@
 
 var measure = require( 'aureooms-js-measure' ) ;
+var predicate = require( 'aureooms-js-predicate' ) ;
 var itertools = require( 'aureooms-js-itertools' ) ;
 var fingertree = require( 'aureooms-js-fingertree' ) ;
 
+var gt = predicate.gt ;
 var list = itertools.list ;
 var Seq = persistent.seq( fingertree.empty , measure.Measures.SIZE ) ;
 
@@ -51,7 +53,15 @@ test( 'seq' , function ( assert ) {
 	var split = s.splitAt( 4 ) ;
 	assert.deepEqual( list( split[0] ) , list( '?.!a' ) ) ;
 	assert.deepEqual( list( split[1] ) , list( 'bcdef' ) ) ;
+	assert.deepEqual( list( s.takeUntil( gt( 4 ) ) ) , list( '?.!a' ) ) ;
+	assert.deepEqual( list( s.dropUntil( gt( 4 ) ) ) , list( 'bcdef' ) ) ;
 
 	assert.deepEqual( list( Seq.from( 'abcd' ) ) , list( 'abcd' ) ) ;
+
+	assert.throws( s.get.bind( s , -1 ) , /index/ ) ;
+	assert.throws( s.get.bind( s , list( s ).length ) , /index/ ) ;
+
+	assert.throws( s.set.bind( s , -1 , 'Z' ) , /index/ ) ;
+	assert.throws( s.set.bind( s , list( s ).length , 'Z' ) , /index/ ) ;
 
 } ) ;
