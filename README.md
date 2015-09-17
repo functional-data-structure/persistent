@@ -117,7 +117,7 @@ seq.get( 1 ) ; // 'a'
 let heap = Heap.from( [ 1 , 3 , 2 ] ) ;
 heap.extractMax( ) ; // [ 3 , Heap{1,2} ]
 
-let ordseq = OrdSeq.from( "abracadabra" ) ;
+let ordseq = OrdSeq.from( 'abracadabra' ) ;
 [ ...ordseq ] ; // aaaaabbcdrr
 
 let intervaltree = IntervalTree.from( [ [ 1 , 5 ] , [ 4 , 9 ] ] ) ;
