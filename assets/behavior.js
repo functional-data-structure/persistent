@@ -147,6 +147,30 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "depth": 3
             }
           ]
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Children",
+            "slug": "children"
+          },
+          "depth": 2
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "Use",
+            "slug": "use"
+          },
+          "depth": 2
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
+            "title": "References",
+            "slug": "references"
+          },
+          "depth": 2
         }
       ]
     }, {
@@ -161,11 +185,71 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "foldPrefix": "^",
           "name": "JavaScript"
         },
-        "sourcePath": "/home/aureooms/dev/js/js-persistent/js/src/dummy.js",
-        "projectPath": "js/src/dummy.js",
-        "targetPath": "dummy",
-        "pageTitle": "dummy",
-        "title": "dummy"
+        "sourcePath": "/home/aureooms/dev/js/js-persistent/js/src/heap.js",
+        "projectPath": "js/src/heap.js",
+        "targetPath": "heap",
+        "pageTitle": "heap",
+        "title": "heap"
+      },
+      "depth": 1,
+      "outline": []
+    }, {
+      "type": "file",
+      "data": {
+        "language": {
+          "nameMatchers": [".js"],
+          "pygmentsLexer": "javascript",
+          "multiLineComment": ["/*", "*", "*/"],
+          "singleLineComment": ["//"],
+          "ignorePrefix": "}",
+          "foldPrefix": "^",
+          "name": "JavaScript"
+        },
+        "sourcePath": "/home/aureooms/dev/js/js-persistent/js/src/intervaltree.js",
+        "projectPath": "js/src/intervaltree.js",
+        "targetPath": "intervaltree",
+        "pageTitle": "intervaltree",
+        "title": "intervaltree"
+      },
+      "depth": 1,
+      "outline": []
+    }, {
+      "type": "file",
+      "data": {
+        "language": {
+          "nameMatchers": [".js"],
+          "pygmentsLexer": "javascript",
+          "multiLineComment": ["/*", "*", "*/"],
+          "singleLineComment": ["//"],
+          "ignorePrefix": "}",
+          "foldPrefix": "^",
+          "name": "JavaScript"
+        },
+        "sourcePath": "/home/aureooms/dev/js/js-persistent/js/src/ordseq.js",
+        "projectPath": "js/src/ordseq.js",
+        "targetPath": "ordseq",
+        "pageTitle": "ordseq",
+        "title": "ordseq"
+      },
+      "depth": 1,
+      "outline": []
+    }, {
+      "type": "file",
+      "data": {
+        "language": {
+          "nameMatchers": [".js"],
+          "pygmentsLexer": "javascript",
+          "multiLineComment": ["/*", "*", "*/"],
+          "singleLineComment": ["//"],
+          "ignorePrefix": "}",
+          "foldPrefix": "^",
+          "name": "JavaScript"
+        },
+        "sourcePath": "/home/aureooms/dev/js/js-persistent/js/src/seq.js",
+        "projectPath": "js/src/seq.js",
+        "targetPath": "seq",
+        "pageTitle": "seq",
+        "title": "seq"
       },
       "depth": 1,
       "outline": []

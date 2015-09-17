@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="en"><head><title>intervaltree</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="intervaltree"><meta name="groc-project-path" content="js/src/intervaltree.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-persistent"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-persistent/blob/master/js/src/intervaltree.js">js/src/intervaltree.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">intervaltree</span> (<span class="hljs-params"> empty , M </span>) </span>{
+
+<span class="hljs-keyword">const</span> atleast = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> k , [ _ , n ] </span>) </span>{
+	<span class="hljs-keyword">return</span> k &lt;= n ;
+} ;
+
+<span class="hljs-keyword">const</span> greater = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> k , [ n , _ ] </span>) </span>{
+	<span class="hljs-keyword">return</span> n &gt; k ;
+} ;
+
+<span class="hljs-keyword">const</span> matches = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"> low , tree </span>) </span>{
+
+	<span class="hljs-keyword">const</span> xs = tree.dropUntil( ( m ) =&gt; atleast( low , m ) ) ;
+
+	<span class="hljs-keyword">if</span> ( xs.empty( ) ) <span class="hljs-keyword">return</span> ;
+
+	<span class="hljs-keyword">yield</span> xs.head( ) ;
+
+	<span class="hljs-keyword">yield</span>* matches( low , xs.tail( ) ) ;
+
+} ;
+
+<span class="hljs-keyword">const</span> IntervalTree = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> tree </span>) </span>{
+	<span class="hljs-keyword">this</span>.tree = tree ;
+} ;
+
+IntervalTree.prototype.empty = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.tree.empty( ) ;
+} ;
+
+IntervalTree.prototype.measure = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.tree.measure( ) ;
+} ;
+
+IntervalTree.prototype.head = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.tree.head( ) ;
+} ;
+
+IntervalTree.prototype.tail = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> IntervalTree( <span class="hljs-keyword">this</span>.tree.tail( ) ) ;
+} ;
+
+IntervalTree.prototype.last = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.tree.last( ) ;
+} ;
+
+IntervalTree.prototype.init = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> IntervalTree( <span class="hljs-keyword">this</span>.tree.init( ) ) ;
+} ;
+
+IntervalTree.prototype.takeUntil = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> predicate </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> IntervalTree( <span class="hljs-keyword">this</span>.tree.takeUntil( predicate ) ) ;
+} ;
+
+IntervalTree.prototype.dropUntil = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> predicate </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> IntervalTree( <span class="hljs-keyword">this</span>.tree.dropUntil( predicate ) ) ;
+} ;
+
+IntervalTree.prototype.split = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> predicate </span>) </span>{
+	<span class="hljs-keyword">const</span> [ left , right ] = <span class="hljs-keyword">this</span>.tree.split( predicate ) ;
+	<span class="hljs-keyword">return</span> [ <span class="hljs-keyword">new</span> IntervalTree( left ) , <span class="hljs-keyword">new</span> IntervalTree( right ) ] ;
+} ;
+
+IntervalTree.prototype[<span class="hljs-built_in">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.tree[<span class="hljs-built_in">Symbol</span>.iterator]( ) ;
+} ;
+
+IntervalTree.prototype.insert = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> interval </span>) </span>{
+	<span class="hljs-keyword">const</span> k = M.measure( interval )[<span class="hljs-number">0</span>] ;
+	<span class="hljs-keyword">const</span> [ left , right ] = <span class="hljs-keyword">this</span>.tree.split( ( m ) =&gt; m[<span class="hljs-number">0</span>] &gt;= k ) ;
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> IntervalTree( left.push( interval ).concat( right ) ) ;
+} ;
+
+IntervalTree.prototype.merge = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> other </span>) </span>{
+
+	<span class="hljs-keyword">if</span> ( other.empty( ) ) <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span> ;
+
+	<span class="hljs-keyword">const</span> a = other.head( ) ;
+	<span class="hljs-keyword">const</span> k = M.measure( a )[<span class="hljs-number">0</span>] ;
+
+	<span class="hljs-keyword">const</span> [ l , r ] = <span class="hljs-keyword">this</span>.split( ( m ) =&gt; m[<span class="hljs-number">0</span>] &gt; k ) ;
+
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> IntervalTree( l.tree.push( a ).concat( r.merge( other.tail( ) ).tree ) ) ;
+
+} ;
+
+IntervalTree.prototype.insertValues = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> values </span>) </span>{
+
+	<span class="hljs-keyword">let</span> s = <span class="hljs-keyword">this</span> ;
+
+	<span class="hljs-keyword">for</span> ( <span class="hljs-keyword">const</span> value <span class="hljs-keyword">of</span> values ) s = s.insert( value ) ;
+
+	<span class="hljs-keyword">return</span> s ;
+
+} ;
+
+IntervalTree.prototype.intervalSearch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> interval </span>) </span>{
+
+	<span class="hljs-keyword">if</span> ( !atleast( interval[<span class="hljs-number">0</span>] , <span class="hljs-keyword">this</span>.measure( ) ) ) <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span> ;
+
+	<span class="hljs-keyword">const</span> k = M.measure( interval )[<span class="hljs-number">0</span>] ;
+
+	<span class="hljs-keyword">const</span> { middle } = <span class="hljs-keyword">this</span>.tree.splitTree( ( m ) =&gt; atleast( k , m ) , M.zero( ) ) ;
+
+	<span class="hljs-keyword">return</span> middle[<span class="hljs-number">0</span>] &gt; interval[<span class="hljs-number">1</span>] ? <span class="hljs-literal">null</span> : middle ;
+
+} ;
+
+IntervalTree.prototype.intervalMatch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> interval </span>) </span>{
+
+	<span class="hljs-keyword">const</span> k = M.measure( interval )[<span class="hljs-number">1</span>] ;
+	<span class="hljs-keyword">return</span> matches( interval[<span class="hljs-number">0</span>] , <span class="hljs-keyword">this</span>.tree.takeUntil( ( m ) =&gt; greater( k , m ) ) ) ;
+
+} ;
+
+
+<span class="hljs-keyword">return</span> {
+	empty : ( ) =&gt; <span class="hljs-keyword">new</span> IntervalTree( empty( M ) ) ,
+	from : ( iterable ) =&gt; <span class="hljs-keyword">new</span> IntervalTree( empty( M ) ).insertValues( iterable )
+} ;
+
+}
+
+exports.intervaltree = intervaltree ;</div></div></div></div></body></html>
