@@ -120,7 +120,7 @@ let OrdSeq = persistent.ordseq( fingertree.empty , measure.Measures.KEY ) ;
 let IntervalTree = persistent.intervaltree( fingertree.empty , measure.Measures.INTERVAL ) ;
 
 let seq = Seq.from( 'abc' ) ;
-seq.get( 1 ) ; // 'a'
+seq.get( 1 ) ; // 'b'
 
 let heap = Heap.from( [ 1 , 3 , 2 ] ) ;
 heap.extractMax( ) ; // [ 3 , Heap{1,2} ]
