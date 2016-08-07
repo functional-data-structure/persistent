@@ -1,6 +1,10 @@
 
 function ordseq ( empty , key ) {
 
+// probably needs a total order instead of a key measure
+// this causes generality problems in the insert, merge, partition and delete
+// methods
+
 const OrdSeq = function ( tree ) {
 	this.tree = tree ;
 } ;
