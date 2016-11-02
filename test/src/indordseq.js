@@ -35,8 +35,8 @@ test( 'indordseq (ordseq behavior)' , assert => {
 	let split = o.partition( 2 ) ;
 	assert.deepEqual( list( split[0] ) , [1] ) ;
 	assert.deepEqual( list( split[1] ) , [2,3] ) ;
-	assert.deepEqual( list( o.takeUntil( function ( m ) { return m[0] >= 2 ; } ) ) , [ 1 ] ) ;
-	assert.deepEqual( list( o.dropUntil( function ( m ) { return m[0] >= 2 ; } ) ) , [ 2 , 3 ] ) ;
+	assert.deepEqual( list( o.takeUntil( m => m[0] >= 2 ) ) , [ 1 ] ) ;
+	assert.deepEqual( list( o.dropUntil( m => m[0] >= 2 ) ) , [ 2 , 3 ] ) ;
 
 	o = IndOrdSeq.from( [1,2,3] ).insertValues( [2.5,2.5,2.5,2.5] ) ;
 	assert.deepEqual( list( o ) , [ 1 , 2 , 2.5 , 2.5 , 2.5 , 2.5 , 3 ] ) ;
@@ -47,7 +47,7 @@ test( 'indordseq (ordseq behavior)' , assert => {
 } ) ;
 
 
-test( 'indordseq (seq behavior)' , function ( assert ) {
+test( 'indordseq (seq behavior)' , assert => {
 
 	let s = IndOrdSeq.empty( ) ;
 
@@ -80,8 +80,8 @@ test( 'indordseq (seq behavior)' , function ( assert ) {
 	let split = s.splitAt( 4 ) ;
 	assert.deepEqual( list( split[0] ) , list( 'abcd' ) ) ;
 	assert.deepEqual( list( split[1] ) , list( 'ef' ) ) ;
-	assert.deepEqual( list( s.takeUntil( function ( m ) { return m[1] > 4 ; } ) ) , list( 'abcd' ) ) ;
-	assert.deepEqual( list( s.dropUntil( function ( m ) { return m[1] > 4 ; } ) ) , list( 'ef' ) ) ;
+	assert.deepEqual( list( s.takeUntil( m => m[1] > 4 ) ) , list( 'abcd' ) ) ;
+	assert.deepEqual( list( s.dropUntil( m => m[1] > 4 ) ) , list( 'ef' ) ) ;
 
 	assert.deepEqual( list( IndOrdSeq.from( 'cdba' ) ) , list( 'abcd' ) ) ;
 

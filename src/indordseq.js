@@ -101,7 +101,7 @@ IndOrdSeq.prototype.get = function ( index ) {
 
 	if ( index < 0 || index >= this.len( ) ) throw new Error( `wrong index '${index}'` ) ;
 
-	return this.tree.splitTree( m => m[1] > index , size.zero( ) ).middle ;
+	return this.tree.splitTree( m => m[1] > index , measure.zero( ) ).middle ;
 
 } ;
 
