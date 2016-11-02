@@ -4,16 +4,16 @@
 Persistent data structures code bricks for JavaScript. Parent is [aureooms/js-data-structures](https://github.com/aureooms/js-data-structures).
 
 ```js
-let Seq = persistent.seq( fingertree.empty , SIZE ) ;
-let Heap = persistent.heap( fingertree.empty , PRIO ) ;
+let Seq = persistent.seq( fingertree.empty , LEN ) ;
+let Heap = persistent.heap( fingertree.empty , MAX ) ;
 let OrdSeq = persistent.ordseq( fingertree.empty , KEY ) ;
+let IndOrdSeq = persistent.indordseq( fingertree.empty , KEY , LEN , KEY_LEN ) ;
 let IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;
 ```
 
 
 [![NPM license](http://img.shields.io/npm/l/aureooms-js-persistent.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-persistent/master/LICENSE)
 [![NPM version](http://img.shields.io/npm/v/aureooms-js-persistent.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-persistent)
-[![Bower version](http://img.shields.io/bower/v/aureooms-js-persistent.svg?style=flat)](http://bower.io/search/?q=aureooms-js-persistent)
 [![Build Status](http://img.shields.io/travis/aureooms/js-persistent.svg?style=flat)](https://travis-ci.org/aureooms/js-persistent)
 [![Coverage Status](http://img.shields.io/coveralls/aureooms/js-persistent.svg?style=flat)](https://coveralls.io/r/aureooms/js-persistent)
 [![Dependencies Status](http://img.shields.io/david/aureooms/js-persistent.svg?style=flat)](https://david-dm.org/aureooms/js-persistent#info=dependencies)
@@ -24,7 +24,7 @@ let IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;
 [![Documentation](https://aureooms.github.io/js-persistent/badge.svg)](https://aureooms.github.io/js-persistent/source.html)
 
 
-Can be managed through [jspm](https://github.com/jspm/jspm-cli),
+Can be managed through [jspm](https://github.com/jspm/jspm-cli)
 and [npm](https://github.com/npm/npm).
 
 
@@ -32,18 +32,20 @@ and [npm](https://github.com/npm/npm).
 
 This package has several children:
 
-  - [aureooms/js-fingertree](https://github.com/aureooms/js-fingertree): finger trees code bricks for JavaScript
+  - [aureooms/js-fingertree](https://github.com/aureooms/js-fingertree): Finger tree data structure for JavaScript
 
 ## Use
 
 ```js
-let measure = require( 'aureooms-js-measure' ) ;
-let fingertree = require( 'aureooms-js-fingertree' ) ;
+import { Measures } from 'aureooms-js-measure' ;
+import { empty } from 'aureooms-js-fingertree' ;
+import persistent from 'aureooms-js-persistent' ;
 
-let Seq = persistent.seq( fingertree.empty , measure.Measures.SIZE ) ;
-let Heap = persistent.heap( fingertree.empty , measure.Measures.PRIO ) ;
-let OrdSeq = persistent.ordseq( fingertree.empty , measure.Measures.KEY ) ;
-let IntervalTree = persistent.intervaltree( fingertree.empty , measure.Measures.INTERVAL ) ;
+let Seq = persistent.seq( empty , Measures.LEN ) ;
+let Heap = persistent.heap( empty , Measures.MAX ) ;
+let OrdSeq = persistent.ordseq( empty , Measures.KEY ) ;
+let IndOrdSeq = persistent.indordseq( empty , Measures.KEY , Measures.LEN , Measures.KEY_LEN ) ;
+let IntervalTree = persistent.intervaltree( empty , Measures.INTERVAL ) ;
 
 let seq = Seq.from( 'abc' ) ;
 seq.get( 1 ) ; // 'b'
@@ -53,6 +55,10 @@ heap.extractMax( ) ; // [ 3 , Heap{1,2} ]
 
 let ordseq = OrdSeq.from( 'abracadabra' ) ;
 [ ...ordseq ] ; // aaaaabbcdrr
+
+let indordseq = IndOrdSeq.from( 'abracadabra' ) ;
+[ ...indordseq ] ; // aaaaabbcdrr
+indordseq.get( 7 ) ; // 'c'
 
 let intervaltree = IntervalTree.from( [ [ 1 , 5 ] , [ 4 , 9 ] ] ) ;
 intervaltree.intervalSearch( [ -7 , 3 ] ) ; // [ 1 , 5 ]
