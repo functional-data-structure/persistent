@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/intervaltree.js | aureooms/js-persistent API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+
+
+  <script src="script/manual.js"></script>
+<script data-ice="userScript" src="user/script/0-header.js"></script>
+<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a data-ice="repoURL" href="https://github.com/aureooms/js-persistent.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-heap">heap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-indordseq">indordseq</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-intervaltree">intervaltree</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ordseq">ordseq</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-seq">seq</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/intervaltree.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
+export function intervaltree ( empty , M ) {
+
+const atleast = function ( k , [ _ , n ] ) {
+	return k &lt;= n ;
+} ;
+
+const greater = function ( k , [ n , _ ] ) {
+	return n &gt; k ;
+} ;
+
+const matches = function* ( low , tree ) {
+
+	const xs = tree.dropUntil( ( m ) =&gt; atleast( low , m ) ) ;
+
+	if ( xs.empty( ) ) return ;
+
+	yield xs.head( ) ;
+
+	yield* matches( low , xs.tail( ) ) ;
+
+} ;
+
+const IntervalTree = function ( tree ) {
+	this.tree = tree ;
+} ;
+
+IntervalTree.prototype.empty = function ( ) {
+	return this.tree.empty( ) ;
+} ;
+
+IntervalTree.prototype.measure = function ( ) {
+	return this.tree.measure( ) ;
+} ;
+
+IntervalTree.prototype.head = function ( ) {
+	return this.tree.head( ) ;
+} ;
+
+IntervalTree.prototype.tail = function ( ) {
+	return new IntervalTree( this.tree.tail( ) ) ;
+} ;
+
+IntervalTree.prototype.last = function ( ) {
+	return this.tree.last( ) ;
+} ;
+
+IntervalTree.prototype.init = function ( ) {
+	return new IntervalTree( this.tree.init( ) ) ;
+} ;
+
+IntervalTree.prototype.takeUntil = function ( predicate ) {
+	return new IntervalTree( this.tree.takeUntil( predicate ) ) ;
+} ;
+
+IntervalTree.prototype.dropUntil = function ( predicate ) {
+	return new IntervalTree( this.tree.dropUntil( predicate ) ) ;
+} ;
+
+IntervalTree.prototype.split = function ( predicate ) {
+	const [ left , right ] = this.tree.split( predicate ) ;
+	return [ new IntervalTree( left ) , new IntervalTree( right ) ] ;
+} ;
+
+IntervalTree.prototype[Symbol.iterator] = function ( ) {
+	return this.tree[Symbol.iterator]( ) ;
+} ;
+
+IntervalTree.prototype.insert = function ( interval ) {
+	const k = M.measure( interval )[0] ;
+	const [ left , right ] = this.tree.split( ( m ) =&gt; m[0] &gt;= k ) ;
+	return new IntervalTree( left.push( interval ).concat( right ) ) ;
+} ;
+
+IntervalTree.prototype.merge = function ( other ) {
+
+	if ( other.empty( ) ) return this ;
+
+	const a = other.head( ) ;
+	const k = M.measure( a )[0] ;
+
+	const [ l , r ] = this.split( ( m ) =&gt; m[0] &gt; k ) ;
+
+	return new IntervalTree( l.tree.push( a ).concat( r.merge( other.tail( ) ).tree ) ) ;
+
+} ;
+
+IntervalTree.prototype.insertValues = function ( values ) {
+
+	let s = this ;
+
+	for ( const value of values ) s = s.insert( value ) ;
+
+	return s ;
+
+} ;
+
+IntervalTree.prototype.intervalSearch = function ( interval ) {
+
+	if ( !atleast( interval[0] , this.measure( ) ) ) return null ;
+
+	const k = M.measure( interval )[0] ;
+
+	const { middle } = this.tree.splitTree( ( m ) =&gt; atleast( k , m ) , M.zero( ) ) ;
+
+	return middle[0] &gt; interval[1] ? null : middle ;
+
+} ;
+
+IntervalTree.prototype.intervalMatch = function ( interval ) {
+
+	const k = M.measure( interval )[1] ;
+	return matches( interval[0] , this.tree.takeUntil( ( m ) =&gt; greater( k , m ) ) ) ;
+
+} ;
+
+
+return {
+	empty : ( ) =&gt; new IntervalTree( empty( M ) ) ,
+	from : ( iterable ) =&gt; new IntervalTree( empty( M ) ).insertValues( iterable )
+} ;
+
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
