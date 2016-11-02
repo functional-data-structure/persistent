@@ -1,7 +1,7 @@
 {
   "name": "aureooms-js-persistent",
   "description": "persistent data structures for JavaScript",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "ava": {
     "require": [
