@@ -24,83 +24,8 @@ let IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;
 [![Inline docs](http://inch-ci.org/github/aureooms/js-persistent.svg?branch=master&style=shields)](http://inch-ci.org/github/aureooms/js-persistent)
 
 Can be managed through [jspm](https://github.com/jspm/jspm-cli),
-[duo](https://github.com/duojs/duo),
-[component](https://github.com/componentjs/component),
-[bower](https://github.com/bower/bower),
-[ender](https://github.com/ender-js/Ender),
-[jam](https://github.com/caolan/jam),
-[spm](https://github.com/spmjs/spm),
 and [npm](https://github.com/npm/npm).
 
-## Install
-
-### jspm
-```terminal
-jspm install github:aureooms/js-persistent
-# or
-jspm install npm:aureooms-js-persistent
-```
-### duo
-No install step needed for duo!
-
-### component
-```terminal
-component install aureooms/js-persistent
-```
-
-### bower
-```terminal
-bower install aureooms-js-persistent
-```
-
-### ender
-```terminal
-ender add aureooms-js-persistent
-```
-
-### jam
-```terminal
-jam install aureooms-js-persistent
-```
-
-### spm
-```terminal
-spm install aureooms-js-persistent --save
-```
-
-### npm
-```terminal
-npm install aureooms-js-persistent --save
-```
-
-## Require
-### jspm
-```js
-let persistent = require( "github:aureooms/js-persistent" ) ;
-// or
-import persistent from 'aureooms-js-persistent' ;
-```
-### duo
-```js
-let persistent = require( "aureooms/js-persistent" ) ;
-```
-
-### component, ender, spm, npm
-```js
-let persistent = require( "aureooms-js-persistent" ) ;
-```
-
-### bower
-The script tag exposes the global variable `persistent`.
-```html
-<script src="bower_components/aureooms-js-persistent/js/dist/persistent.min.js"></script>
-```
-Alternatively, you can use any tool mentioned [here](http://bower.io/docs/tools/).
-
-### jam
-```js
-require( [ "aureooms-js-persistent" ] , function ( persistent ) { ... } ) ;
-```
 
 ## Children
 

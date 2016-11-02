@@ -1,11 +1,8 @@
 {
-	"main": "js/dist/persistent.js",
+	"main": "lib/index.js",
 	"version": "1.0.1",
 	"bugs": {
 		"url": "https://github.com/aureooms/js-persistent/issues"
-	},
-	"spm": {
-		"main": "js/dist/persistent.js"
 	},
 	"keywords": [
 		"bricks",
@@ -17,11 +14,12 @@
 		"structures"
 	],
 	"license": "AGPL-3.0",
-	"description": "persistent data structures code bricks for JavaScript",
+	"description": "persistent data structures for JavaScript",
 	"scripts": {
-		"test": "./node_modules/.bin/aureooms-node-package-test",
-		"doc": "./node_modules/.bin/groc",
-		"build": "./node_modules/.bin/aureooms-node-package-build"
+		"build": "babel src -d lib",
+		"prepublish": "npm run build",
+		"test": "ava ./test/src",
+		"cover": "nyc --reporter=lcov npm test"
 	},
 	"repository": {
 		"type": "git",
@@ -32,10 +30,33 @@
 		"aureooms-js-itertools": "^1.3.0",
 		"aureooms-js-measure": "^0.2.0",
 		"aureooms-js-predicate": "^2.0.1",
-		"aureooms-node-package": "^5.0.2"
+		"ava": "^0.16.0",
+		"babel-cli": "^6.16.0",
+		"babel-polyfill": "^6.16.0",
+		"babel-preset-latest": "^6.16.0",
+		"codeclimate-test-reporter": "^0.4.0",
+		"coveralls": "^2.11.14",
+		"esdoc": "^0.4.8",
+		"nyc": "^8.3.1"
+	},
+	"ava": {
+		"require": [
+			"babel-polyfill",
+			"babel-register"
+		]
+	},
+	"babel": {
+		"presets": [
+			"latest"
+		],
+		"env": {
+			"development": {
+				"sourceMaps": "inline"
+			}
+		}
 	},
 	"dependencies": {},
-	"homepage": "http://aureooms.github.io/js-persistent/",
-	"author": "aureooms",
+	"homepage": "http://aureooms.github.io/js-persistent",
+	"author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
 	"name": "aureooms-js-persistent"
 }

@@ -1,5 +1,5 @@
 
-function ordseq ( empty , key ) {
+export function ordseq ( empty , key ) {
 
 // probably needs a total order instead of a key measure
 // this causes generality problems in the insert, merge, partition and delete
@@ -99,5 +99,3 @@ return {
 } ;
 
 }
-
-exports.ordseq = ordseq ;

@@ -1,5 +1,5 @@
 
-function seq ( empty , size ) {
+export function seq ( empty , size ) {
 
 const Seq = function ( tree ) {
 	this.tree = tree ;
@@ -96,5 +96,3 @@ return {
 } ;
 
 }
-
-exports.seq = seq ;

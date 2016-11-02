@@ -1,5 +1,5 @@
 
-function heap ( empty , max ) {
+export function heap ( empty , max ) {
 
 let Heap = function ( tree ) {
 	this.tree = tree ;
@@ -41,5 +41,3 @@ return {
 } ;
 
 }
-
-exports.heap = heap ;

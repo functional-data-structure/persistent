@@ -1,5 +1,5 @@
 
-function indordseq ( empty , key , size , measure ) {
+export function indordseq ( empty , key , size , measure ) {
 
 // probably needs a total order instead of a measure
 // this causes generality problems in the insert, merge, partition and delete
@@ -115,5 +115,3 @@ return {
 } ;
 
 }
-
-exports.indordseq = indordseq ;
