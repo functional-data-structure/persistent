@@ -75,7 +75,35 @@
     <span>&#xBB;</span>
     <span data-ice="title">Example</span>
   </div>
-  
+  <div data-ice="content"><pre><code class="lang-js"><code class="source-code prettyprint">import { Measures } from &apos;aureooms-js-measure&apos; ;
+import { empty } from &apos;aureooms-js-fingertree&apos; ;
+import persistent from &apos;aureooms-js-persistent&apos; ;
+
+let Seq = persistent.seq( empty , Measures.LEN ) ;
+let Heap = persistent.heap( empty , Measures.MAX ) ;
+let OrdSeq = persistent.ordseq( empty , Measures.KEY ) ;
+let IndOrdSeq = persistent.indordseq( empty , Measures.KEY , Measures.LEN , Measures.KEY_LEN ) ;
+let IntervalTree = persistent.intervaltree( empty , Measures.INTERVAL ) ;
+
+let seq = Seq.from( &apos;abc&apos; ) ;
+seq.get( 1 ) ; // &apos;b&apos;
+
+let heap = Heap.from( [ 1 , 3 , 2 ] ) ;
+heap.extractMax( ) ; // [ 3 , Heap{1,2} ]
+
+let ordseq = OrdSeq.from( &apos;abracadabra&apos; ) ;
+[ ...ordseq ] ; // aaaaabbcdrr
+
+let indordseq = IndOrdSeq.from( &apos;abracadabra&apos; ) ;
+[ ...indordseq ] ; // aaaaabbcdrr
+indordseq.get( 7 ) ; // &apos;c&apos;
+
+let intervaltree = IntervalTree.from( [ [ 1 , 5 ] , [ 4 , 9 ] ] ) ;
+intervaltree.intervalSearch( [ -7 , 3 ] ) ; // [ 1 , 5 ]
+intervaltree.intervalSearch( [ 7 , 12 ] ) ; // [ 4 , 9 ]
+intervaltree.intervalSearch( [ 11 , 12 ] ) ; // null</code>
+</code></pre>
+</div>
 </div>
 </div>
 
