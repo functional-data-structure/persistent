@@ -24,10 +24,6 @@ let IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;
 [![Documentation](https://aureooms.github.io/js-persistent/badge.svg)](https://aureooms.github.io/js-persistent/source.html)
 
 
-Can be managed through [jspm](https://github.com/jspm/jspm-cli)
-and [npm](https://github.com/npm/npm).
-
-
 ## Children
 
 This package has several children:
