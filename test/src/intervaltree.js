@@ -1,17 +1,17 @@
-var measure = require( 'aureooms-js-measure' ) ;
-var predicate = require( 'aureooms-js-predicate' ) ;
-var itertools = require( 'aureooms-js-itertools' ) ;
-var fingertree = require( 'aureooms-js-fingertree' ) ;
+import test from 'ava' ;
 
-var ge = predicate.ge ;
-var list = itertools.list ;
-var IntervalTree = persistent.intervaltree( fingertree.empty , measure.Measures.INTERVAL ) ;
+import { Measures } from 'aureooms-js-measure' ;
+import { list } from 'aureooms-js-itertools' ;
+import { empty } from 'aureooms-js-fingertree' ;
+import { intervaltree } from '../../src' ;
 
-test( 'intervaltree' , function ( assert ) {
+const IntervalTree = intervaltree( empty , Measures.INTERVAL ) ;
 
-	var i = IntervalTree.empty( ) ;
+test( 'intervaltree' ,  assert => {
 
-	assert.ok( i.empty( ) ) ;
+	let i = IntervalTree.empty( ) ;
+
+	assert.truthy( i.empty( ) ) ;
 
 	i = i.insert( [ 1 , 7 ] ) ;
 	i = i.insert( [ 3 , 9 ] ) ;

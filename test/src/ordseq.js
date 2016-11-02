@@ -1,36 +1,37 @@
-var measure = require( 'aureooms-js-measure' ) ;
-var predicate = require( 'aureooms-js-predicate' ) ;
-var itertools = require( 'aureooms-js-itertools' ) ;
-var fingertree = require( 'aureooms-js-fingertree' ) ;
+import test from 'ava' ;
 
-var ge = predicate.ge ;
-var list = itertools.list ;
-var OrdSeq = persistent.ordseq( fingertree.empty , measure.Measures.KEY ) ;
+import { Measures } from 'aureooms-js-measure' ;
+import { ge } from 'aureooms-js-predicate' ;
+import { list } from 'aureooms-js-itertools' ;
+import { empty } from 'aureooms-js-fingertree' ;
+import { ordseq } from '../../src' ;
 
-test( 'ordseq' , function ( assert ) {
+const OrdSeq = ordseq( empty , Measures.KEY ) ;
 
-	var o = OrdSeq.empty( ) ;
+test( 'ordseq' , assert => {
 
-	assert.ok( o.empty( ) ) ;
+	let o = OrdSeq.empty( ) ;
+
+	assert.truthy( o.empty( ) ) ;
 
 	o = o.insert( 1 ) ;
 	o = o.insert( 3 ) ;
 	o = o.insert( 2 ) ;
 
-	assert.equal( o.measure( ) , 3 ) ;
+	assert.is( o.measure( ) , 3 ) ;
 
-	assert.ok( !o.empty( ) ) ;
+	assert.truthy( !o.empty( ) ) ;
 
-	assert.equal( o.min( ) , 1 ) ;
-	assert.equal( o.max( ) , 3 ) ;
+	assert.is( o.min( ) , 1 ) ;
+	assert.is( o.max( ) , 3 ) ;
 
-	assert.equal( o.head( ) , 1 ) ;
+	assert.is( o.head( ) , 1 ) ;
 	assert.deepEqual( list( o.tail( ) ) , [2,3] ) ;
 
-	assert.equal( o.last( ) , 3 ) ;
+	assert.is( o.last( ) , 3 ) ;
 	assert.deepEqual( list( o.init( ) ) , [1,2] ) ;
 
-	var split = o.partition( 2 ) ;
+	let split = o.partition( 2 ) ;
 	assert.deepEqual( list( split[0] ) , [1] ) ;
 	assert.deepEqual( list( split[1] ) , [2,3] ) ;
 	assert.deepEqual( list( o.takeUntil( ge( 2 ) ) ) , [ 1 ] ) ;

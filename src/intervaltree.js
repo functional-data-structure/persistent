@@ -1,5 +1,5 @@
 
-function intervaltree ( empty , M ) {
+export function intervaltree ( empty , M ) {
 
 const atleast = function ( k , [ _ , n ] ) {
 	return k <= n ;
@@ -121,5 +121,3 @@ return {
 } ;
 
 }
-
-exports.intervaltree = intervaltree ;
