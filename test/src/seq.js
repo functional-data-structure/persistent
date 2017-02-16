@@ -1,9 +1,9 @@
 import test from 'ava' ;
 
-import { Measures } from 'aureooms-js-measure' ;
-import { gt } from 'aureooms-js-predicate' ;
-import { list } from 'aureooms-js-itertools' ;
-import { empty } from 'aureooms-js-fingertree' ;
+import { Measures } from '@aureooms/js-measure' ;
+import { gt } from '@aureooms/js-predicate' ;
+import { list } from '@aureooms/js-itertools' ;
+import { empty } from '@aureooms/js-fingertree' ;
 import { seq } from '../../src' ;
 
 const Seq = seq( empty , Measures.SIZE ) ;
