@@ -1,7 +1,7 @@
 ```js
-import { Measures } from 'aureooms-js-measure' ;
-import { empty } from 'aureooms-js-fingertree' ;
-import persistent from 'aureooms-js-persistent' ;
+import { Measures } from '@aureooms/js-measure' ;
+import { empty } from '@aureooms/js-fingertree' ;
+import persistent from '@aureooms/js-persistent' ;
 
 let Seq = persistent.seq( empty , Measures.LEN ) ;
 let Heap = persistent.heap( empty , Measures.MAX ) ;

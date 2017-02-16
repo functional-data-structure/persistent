@@ -8,7 +8,7 @@ import 'babel-polyfill' ;
 
 Then
 ```js
-const persistent = require( 'aureooms-js-persistent' ) ;
+const persistent = require( '@aureooms/js-persistent' ) ;
 // or
-import persistent from 'aureooms-js-persistent' ;
+import persistent from '@aureooms/js-persistent' ;
 ```
