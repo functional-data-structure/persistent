@@ -1,5 +1,5 @@
 {
-  "name": "aureooms-js-persistent",
+  "name": "@aureooms/js-persistent",
   "description": "persistent data structures for JavaScript",
   "version": "2.1.2",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
@@ -24,10 +24,10 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "aureooms-js-fingertree": "^4.0.3",
-    "aureooms-js-itertools": "^3.0.0",
-    "aureooms-js-measure": "^1.0.3",
-    "aureooms-js-predicate": "^2.0.2",
+    "@aureooms/js-fingertree": "^4.0.3",
+    "@aureooms/js-itertools": "^3.0.0",
+    "@aureooms/js-measure": "^1.0.3",
+    "@aureooms/js-predicate": "^2.0.2",
     "ava": "^0.18.0",
     "babel-cli": "^6.18.0",
     "babel-polyfill": "^6.16.0",
