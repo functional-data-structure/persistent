@@ -7,7 +7,11 @@
     "require": [
       "@babel/polyfill",
       "@babel/register"
-    ]
+    ],
+    "files": [
+      "test/src/**/*"
+    ],
+    "timeout": "1m"
   },
   "babel": {
     "presets": [
@@ -28,7 +32,7 @@
     "@aureooms/js-itertools": "^3.0.0",
     "@aureooms/js-measure": "^1.0.3",
     "@aureooms/js-predicate": "^2.0.2",
-    "ava": "^0.19.0",
+    "ava": "^3.7.1",
     "babel-cli": "^6.18.0",
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
@@ -44,8 +48,7 @@
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
-    "np": "6.2.1",
-    "xo": "0.29.1"
+    "np": "6.2.1"
   },
   "homepage": "http://aureooms.github.io/js-persistent",
   "keywords": [
@@ -65,7 +68,7 @@
     "build": "babel src -d lib",
     "cover": "nyc --reporter=lcov npm test",
     "prepublish": "npm run build",
-    "test": "ava ./test/src",
+    "test": "ava",
     "esdoc": "esdoc"
   }
 }
