@@ -85,7 +85,7 @@ test( 'indordseq (seq behavior)' , assert => {
 
 	assert.deepEqual( list( IndOrdSeq.from( 'cdba' ) ) , list( 'abcd' ) ) ;
 
-	assert.throws( s.get.bind( s , -1 ) , /index/ ) ;
-	assert.throws( s.get.bind( s , list( s ).length ) , /index/ ) ;
+	assert.throws( s.get.bind( s , -1 ) , { message: /index/ } ) ;
+	assert.throws( s.get.bind( s , list( s ).length ) , { message: /index/ } ) ;
 
 } ) ;

@@ -58,10 +58,10 @@ test( 'seq' , assert => {
 
 	assert.deepEqual( list( Seq.from( 'abcd' ) ) , list( 'abcd' ) ) ;
 
-	assert.throws( s.get.bind( s , -1 ) , /index/ ) ;
-	assert.throws( s.get.bind( s , list( s ).length ) , /index/ ) ;
+	assert.throws( s.get.bind( s , -1 ) , { message: /index/ } ) ;
+	assert.throws( s.get.bind( s , list( s ).length ) , { message: /index/ } ) ;
 
-	assert.throws( s.set.bind( s , -1 , 'Z' ) , /index/ ) ;
-	assert.throws( s.set.bind( s , list( s ).length , 'Z' ) , /index/ ) ;
+	assert.throws( s.set.bind( s , -1 , 'Z' ) , { message: /index/ } ) ;
+	assert.throws( s.set.bind( s , list( s ).length , 'Z' ) , { message: /index/ } ) ;
 
 } ) ;
