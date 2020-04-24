@@ -32,20 +32,23 @@
     "@aureooms/js-itertools": "^3.4.0",
     "@aureooms/js-measure": "^1.0.3",
     "@aureooms/js-predicate": "^2.0.2",
-    "ava": "^3.7.1",
-    "coveralls": "^3.0.14",
-    "esdoc": "^1.1.0",
-    "nyc": "^15.0.1",
     "@babel/cli": "7.8.4",
     "@babel/core": "7.9.0",
     "@babel/polyfill": "7.8.7",
     "@babel/preset-env": "7.9.5",
     "@babel/register": "7.9.0",
+    "ava": "^3.7.1",
+    "coveralls": "^3.0.14",
+    "esdoc": "^1.1.0",
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
-    "np": "6.2.2"
+    "np": "6.2.2",
+    "nyc": "^15.0.1"
   },
+  "files": [
+    "lib"
+  ],
   "homepage": "http://aureooms.github.io/js-persistent",
   "keywords": [
     "data",
@@ -63,12 +66,9 @@
   "scripts": {
     "build": "rm -rf lib && babel src -d lib",
     "cover": "nyc --reporter=lcov npm test",
-    "test": "ava",
     "esdoc": "esdoc",
     "prepare": "npm run build",
-    "release": "np"
-  },
-  "files": [
-    "lib"
-  ]
+    "release": "np",
+    "test": "ava"
+  }
 }
