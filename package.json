@@ -69,7 +69,8 @@
     "cover": "nyc --reporter=lcov npm test",
     "test": "ava",
     "esdoc": "esdoc",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "release": "np"
   },
   "files": [
     "lib"
