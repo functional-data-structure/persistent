@@ -35,7 +35,17 @@
     "codeclimate-test-reporter": "^0.4.0",
     "coveralls": "^2.11.14",
     "esdoc": "^0.5.0",
-    "nyc": "^11.0.0"
+    "nyc": "^11.0.0",
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.9.0",
+    "@babel/polyfill": "7.8.7",
+    "@babel/preset-env": "7.9.5",
+    "@babel/register": "7.9.0",
+    "esdoc-inject-script-plugin": "1.0.0",
+    "esdoc-inject-style-plugin": "1.0.0",
+    "esdoc-standard-plugin": "1.0.0",
+    "np": "6.2.1",
+    "xo": "0.29.1"
   },
   "homepage": "http://aureooms.github.io/js-persistent",
   "keywords": [
