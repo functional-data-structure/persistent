@@ -115,8 +115,30 @@ Seq.prototype.splice = function ( start , deleteCount , ...items ) {
 	if ( start < -length || start >= length ) throw new Error( `wrong start '${start}'` ) ;
 
 	if ( start < 0 ) start += length ;
+	else if ( start === length ) {
+		return [ new Seq(this.tree.append(items)) , new Seq(empty(size)) ] ;
+	}
 
-	const [ prefix , rest ] = this.tree.split( ( m ) => m > start ) ;
+	const split = this.tree.splitTree( ( m ) => m > start , size.zero( ) ) ;
+
+	if (deleteCount === 1) {
+		if (items.length === 0) {
+			return [ new Seq(split.left.concat(split.right)) , new Seq(empty(size).push(split.middle)) ] ;
+		}
+		else {
+			return [ new Seq(split.left.append(items).concat(split.right)) , new Seq(empty(size).push(split.middle)) ] ;
+		}
+	}
+
+	const prefix = split.left ;
+	const rest = split.right.cons(split.middle) ;
+
+	if (deleteCount === 0) {
+		return [ new Seq(prefix.append(items).concat(rest)) , new Seq(empty(size)) ] ;
+	}
+	if (deleteCount === undefined) {
+		return [ new Seq(prefix.append(items)) , new Seq(rest) ] ;
+	}
 	const [ deleted , suffix ] = rest.split( ( m ) => m > deleteCount ) ;
 	return [ new Seq(prefix.append(items).concat(suffix)) , new Seq(deleted) ] ;
 
