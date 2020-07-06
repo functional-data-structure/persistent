@@ -76,6 +76,52 @@ Seq.prototype.get = function ( index ) {
 
 } ;
 
+Seq.prototype.insert = function ( index , value ) {
+
+	if ( index < 0 || index >= this.len( ) ) throw new Error( `wrong index '${index}'` ) ;
+
+	const [prefix, rest] = this.tree.split( ( m ) => m > index ) ;
+	return new Seq(prefix.push(value).concat(rest)) ;
+
+} ;
+
+Seq.prototype.remove = function ( index ) {
+
+	if ( index < 0 || index >= this.len( ) ) throw new Error( `wrong index '${index}'` ) ;
+
+	const { left , right } = this.tree.splitTree( ( m ) => m > index , size.zero( ) ) ;
+	return new Seq(left.concat(right)) ;
+
+} ;
+
+Seq.prototype.slice = function ( start = 0 , end = this.len( ) ) {
+
+	if ( start < -this.len( ) || start > this.len( ) ) throw new Error( `wrong start '${start}'` ) ;
+	if ( end < -this.len( ) || end > this.len( ) ) throw new Error( `wrong end '${end}'` ) ;
+
+	if ( start < 0 ) start += this.len( ) ;
+	if ( end < 0 ) end += this.len( ) ;
+
+	const [ prefix , rest ] = this.tree.split( ( m ) => m > start ) ;
+	const [ slice , suffix ] = rest.split( ( m ) => m > end - start ) ;
+	return new Seq(slice);
+
+} ;
+
+Seq.prototype.splice = function ( start , deleteCount , ...items ) {
+
+	const length = this.len( ) ;
+
+	if ( start < -length || start >= length ) throw new Error( `wrong start '${start}'` ) ;
+
+	if ( start < 0 ) start += length ;
+
+	const [ prefix , rest ] = this.tree.split( ( m ) => m > start ) ;
+	const [ deleted , suffix ] = rest.split( ( m ) => m > deleteCount ) ;
+	return [ new Seq(prefix.append(items).concat(suffix)) , new Seq(deleted) ] ;
+
+} ;
+
 
 Seq.prototype[Symbol.iterator] = function ( ) {
 	return this.tree[Symbol.iterator]( ) ;
