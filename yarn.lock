@@ -14,10 +14,10 @@
   resolved "https://registry.yarnpkg.com/@aureooms/js-error/-/js-error-4.0.0.tgz#cea0a145f5290f443911b3d1890d7254a18eeb9b"
   integrity sha512-omwmz82cPxqRnorZ8tqeIcPj1QcJnCsMiVYcwOh/QfUXhJ+DmiBPgWOm5WWAQvQzYVKe0/k7+s2ie+UoRJagjA==
 
-"@aureooms/js-fingertree@4.0.6":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-fingertree/-/js-fingertree-4.0.6.tgz#1924b0a4f189c1042097f6f03a275b77cc27e33c"
-  integrity sha512-tQ8dRTQM9tGTNWaboAwziUy7oT4p0ltPnjlU4r2OJsnWnFT4VJIk4I++tahwcLtui3aYZGc0UO/IrU68p5kZvw==
+"@aureooms/js-fingertree@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@aureooms/js-fingertree/-/js-fingertree-5.0.0.tgz#133d9bd5d047448f07706e4a83b9a7b96dc493a6"
+  integrity sha512-E+pBH4Ryw/gnL6xpqVlc3SMAPBKh5NPVf12LYP9On4Kx25Rcw5jsFujRsdyrqO11wVM85QVTM/xYnLLATnPSPQ==
 
 "@aureooms/js-itertools@4.0.0":
   version "4.0.0"
