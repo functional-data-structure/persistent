@@ -1,11 +1,11 @@
 {
   "name": "@aureooms/js-persistent",
-  "description": "persistent data structures for JavaScript",
+  "description": "Persistent data structures for JavaScript",
   "version": "2.1.2",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "ava": {
     "require": [
-      "@babel/polyfill",
+      "regenerator-runtime/runtime",
       "@babel/register"
     ],
     "files": [
@@ -18,7 +18,56 @@
       "@babel/preset-env"
     ],
     "env": {
+      "test": {
+        "presets": [
+          "babel-preset-power-assert"
+        ],
+        "plugins": [
+          [
+            "transform-remove-console",
+            {
+              "exclude": [
+                "log",
+                "error",
+                "warn"
+              ]
+            }
+          ]
+        ],
+        "sourceMaps": "inline"
+      },
       "development": {
+        "presets": [
+          "babel-preset-power-assert"
+        ],
+        "plugins": [
+          [
+            "transform-remove-console",
+            {
+              "exclude": [
+                "log",
+                "error",
+                "warn"
+              ]
+            }
+          ]
+        ],
+        "sourceMaps": "inline"
+      },
+      "production": {
+        "plugins": [
+          "babel-plugin-unassert",
+          [
+            "transform-remove-console",
+            {
+              "exclude": [
+                "log",
+                "error",
+                "warn"
+              ]
+            }
+          ]
+        ],
         "sourceMaps": "inline"
       }
     }
@@ -28,23 +77,27 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@aureooms/js-fingertree": "4.0.6",
+    "@aureooms/js-fingertree": "5.0.0",
     "@aureooms/js-itertools": "4.0.0",
     "@aureooms/js-measure": "1.0.3",
     "@aureooms/js-predicate": "2.0.2",
     "@babel/cli": "7.10.4",
     "@babel/core": "7.10.4",
-    "@babel/polyfill": "7.10.4",
     "@babel/preset-env": "7.10.4",
     "@babel/register": "7.10.4",
     "ava": "3.10.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "babel-plugin-unassert": "^3.0.1",
+    "babel-preset-power-assert": "^3.0.0",
     "coveralls": "3.1.0",
     "esdoc": "1.1.0",
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
-    "np": "6.2.5",
-    "nyc": "15.1.0"
+    "np": "6.3.0",
+    "nyc": "15.1.0",
+    "power-assert": "^1.6.1",
+    "regenerator-runtime": "^0.13.5"
   },
   "files": [
     "lib"
@@ -64,7 +117,7 @@
     "url": "https://github.com/aureooms/js-persistent.git"
   },
   "scripts": {
-    "build": "rm -rf lib && babel src -d lib",
+    "build": "babel --delete-dir-on-start --env-name production src -d lib",
     "cover": "nyc --reporter=lcov npm test",
     "esdoc": "esdoc",
     "prepare": "npm run build",

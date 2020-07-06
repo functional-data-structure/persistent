@@ -6,7 +6,7 @@ import { heap } from '../../src' ;
 
 const Heap = heap( empty , Measures.PRIO ) ;
 
-test( 'heap' , assert => {
+test( 'heap' , t => {
 
 	let h = Heap.empty( ) ;
 	h = h.push( 1 ) ;
@@ -20,15 +20,15 @@ test( 'heap' , assert => {
 	let z = y[1].extractMax( ) ;
 	let c = z[0] ;
 
-	assert.is( a , 3 ) ;
-	assert.is( b , 2 ) ;
-	assert.is( c , 1 ) ;
+	t.is( a , 3 ) ;
+	t.is( b , 2 ) ;
+	t.is( c , 1 ) ;
 
-	assert.truthy( z[1].empty( ) ) ;
-	assert.is( h.maxKey( ) , 3 ) ;
-	assert.is( x[1].maxKey( ) , 2 ) ;
-	assert.is( y[1].maxKey( ) , 1 ) ;
-	assert.is( z[1].maxKey( ) , -Infinity ) ;
+	t.true( z[1].empty( ) ) ;
+	t.is( h.maxKey( ) , 3 ) ;
+	t.is( x[1].maxKey( ) , 2 ) ;
+	t.is( y[1].maxKey( ) , 1 ) ;
+	t.is( z[1].maxKey( ) , -Infinity ) ;
 
 	h = Heap.from( [ 1 , 3 , 2 ] ) ;
 
@@ -39,14 +39,14 @@ test( 'heap' , assert => {
 	z = y[1].extractMax( ) ;
 	c = z[0] ;
 
-	assert.is( a , 3 ) ;
-	assert.is( b , 2 ) ;
-	assert.is( c , 1 ) ;
+	t.is( a , 3 ) ;
+	t.is( b , 2 ) ;
+	t.is( c , 1 ) ;
 
-	assert.truthy( z[1].empty( ) ) ;
-	assert.is( h.maxKey( ) , 3 ) ;
-	assert.is( x[1].maxKey( ) , 2 ) ;
-	assert.is( y[1].maxKey( ) , 1 ) ;
-	assert.is( z[1].maxKey( ) , -Infinity ) ;
+	t.true( z[1].empty( ) ) ;
+	t.is( h.maxKey( ) , 3 ) ;
+	t.is( x[1].maxKey( ) , 2 ) ;
+	t.is( y[1].maxKey( ) , 1 ) ;
+	t.is( z[1].maxKey( ) , -Infinity ) ;
 
 } ) ;
