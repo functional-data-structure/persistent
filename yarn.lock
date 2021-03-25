@@ -19,10 +19,10 @@
   resolved "https://registry.yarnpkg.com/@aureooms/js-fingertree/-/js-fingertree-5.0.2.tgz#731979850f6d7767c65bfb66cc34db38f0b8b28a"
   integrity sha512-AjWsSIS5S6hJp5uAQh8y89A1sVcRcD0qL6S64YGtoaJJBJ5lPBX58HDjmTq8nIrBRFv2T7VLUsfGCPJImwq2pQ==
 
-"@aureooms/js-itertools@5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-itertools/-/js-itertools-5.0.1.tgz#73af47b0a710073730fccde6c57431a9178d1bea"
-  integrity sha512-EBmA0EiY49MSu7M6eCZvUyEhV79bvIQDg/LL3bfUG8fxhL4IeBLbgYc41a4/LunD5mLFG8ZQna/Z/oUjr4fUuQ==
+"@aureooms/js-itertools@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@aureooms/js-itertools/-/js-itertools-5.1.0.tgz#bb90a237baab78eeaef177376ac762fc43b9d485"
+  integrity sha512-HC5Rl89Vc99lcp2HBtZVYpmr1Esjm4gDyBD4V8ATNB5zBMtJ2+Jd145UsvgIqHPg7z4RbX1G0XNW6pM4rB6Uuw==
   dependencies:
     "@aureooms/js-collections-deque" "^6.0.1"
     "@aureooms/js-error" "^5.0.2"
