@@ -123,6 +123,7 @@
     "esdoc": "esdoc",
     "prepare": "npm run build",
     "release": "np",
-    "test": "ava"
+    "test": "ava",
+    "lint-config-and-fix": "fixpack || fixpack"
   }
 }
