@@ -59,12 +59,12 @@
     "regenerator-runtime": "0.13.7"
   },
   "ava": {
+    "files": [
+      "test/src/**/*"
+    ],
     "require": [
       "regenerator-runtime/runtime",
       "@babel/register"
-    ],
-    "files": [
-      "test/src/**/*"
     ],
     "timeout": "1m"
   },
