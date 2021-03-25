@@ -13,7 +13,7 @@ test( 'indordseq (ordseq behavior)' , t => {
 
 	let o = IndOrdSeq.empty( ) ;
 
-	t.true( o.empty( ) ) ;
+	t.true( o.isEmpty( ) ) ;
 
 	o = o.insert( 1 ) ;
 	o = o.insert( 3 ) ;
@@ -21,7 +21,7 @@ test( 'indordseq (ordseq behavior)' , t => {
 
 	t.deepEqual( o.measure( ) , [ 3 , 3 ] ) ;
 
-	t.true( !o.empty( ) ) ;
+	t.true( !o.isEmpty( ) ) ;
 
 	t.is( o.min( ) , 1 ) ;
 	t.is( o.max( ) , 3 ) ;
@@ -51,7 +51,7 @@ test( 'indordseq (seq behavior)' , t => {
 
 	let s = IndOrdSeq.empty( ) ;
 
-	t.true( s.empty( ) ) ;
+	t.true( s.isEmpty( ) ) ;
 
 	t.is( s.len( ) , 0 ) ;
 
@@ -59,7 +59,7 @@ test( 'indordseq (seq behavior)' , t => {
 	s = s.insert( 'c' ) ;
 	s = s.insert( 'a' ) ;
 
-	t.true( !s.empty( ) ) ;
+	t.true( !s.isEmpty( ) ) ;
 
 	t.is( s.len( ) , 3 ) ;
 

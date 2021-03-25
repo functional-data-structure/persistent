@@ -13,7 +13,7 @@ const matches = function* ( low , tree ) {
 
 	const xs = tree.dropUntil( ( m ) => atleast( low , m ) ) ;
 
-	if ( xs.empty( ) ) return ;
+	if ( xs.isEmpty( ) ) return ;
 
 	yield xs.head( ) ;
 
@@ -25,8 +25,8 @@ const IntervalTree = function ( tree ) {
 	this.tree = tree ;
 } ;
 
-IntervalTree.prototype.empty = function ( ) {
-	return this.tree.empty( ) ;
+IntervalTree.prototype.isEmpty = function ( ) {
+	return this.tree.isEmpty( ) ;
 } ;
 
 IntervalTree.prototype.measure = function ( ) {
@@ -74,7 +74,7 @@ IntervalTree.prototype.insert = function ( interval ) {
 
 IntervalTree.prototype.merge = function ( other ) {
 
-	if ( other.empty( ) ) return this ;
+	if ( other.isEmpty( ) ) return this ;
 
 	const a = other.head( ) ;
 	const k = M.measure( a )[0] ;

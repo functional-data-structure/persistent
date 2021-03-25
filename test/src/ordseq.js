@@ -12,7 +12,7 @@ test( 'ordseq' , t => {
 
 	let o = OrdSeq.empty( ) ;
 
-	t.true( o.empty( ) ) ;
+	t.true( o.isEmpty( ) ) ;
 
 	o = o.insert( 1 ) ;
 	o = o.insert( 3 ) ;
@@ -20,7 +20,7 @@ test( 'ordseq' , t => {
 
 	t.is( o.measure( ) , 3 ) ;
 
-	t.true( !o.empty( ) ) ;
+	t.true( !o.isEmpty( ) ) ;
 
 	t.is( o.min( ) , 1 ) ;
 	t.is( o.max( ) , 3 ) ;

@@ -12,7 +12,7 @@ test( 'seq' , t => {
 
 	let s = Seq.empty( ) ;
 
-	t.true( s.empty( ) ) ;
+	t.true( s.isEmpty( ) ) ;
 
 	t.is( s.len( ) , 0 ) ;
 
@@ -20,7 +20,7 @@ test( 'seq' , t => {
 	s = s.push( 'c' ) ;
 	s = s.cons( 'a' ) ;
 
-	t.true( !s.empty( ) ) ;
+	t.true( !s.isEmpty( ) ) ;
 
 	t.is( s.len( ) , 3 ) ;
 

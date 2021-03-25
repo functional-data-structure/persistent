@@ -5,8 +5,8 @@ let Heap = function ( tree ) {
 	this.tree = tree ;
 } ;
 
-Heap.prototype.empty = function ( ) {
-	return this.tree.empty( ) ;
+Heap.prototype.isEmpty = function ( ) {
+	return this.tree.isEmpty( ) ;
 } ;
 
 Heap.prototype.maxKey =

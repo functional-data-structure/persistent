@@ -5,8 +5,8 @@ const Seq = function ( tree ) {
 	this.tree = tree ;
 } ;
 
-Seq.prototype.empty = function ( ) {
-	return this.tree.empty( ) ;
+Seq.prototype.isEmpty = function ( ) {
+	return this.tree.isEmpty( ) ;
 } ;
 
 Seq.prototype.measure =

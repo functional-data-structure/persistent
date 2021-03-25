@@ -24,7 +24,7 @@ test( 'heap' , t => {
 	t.is( b , 2 ) ;
 	t.is( c , 1 ) ;
 
-	t.true( z[1].empty( ) ) ;
+	t.true( z[1].isEmpty( ) ) ;
 	t.is( h.maxKey( ) , 3 ) ;
 	t.is( x[1].maxKey( ) , 2 ) ;
 	t.is( y[1].maxKey( ) , 1 ) ;
@@ -43,7 +43,7 @@ test( 'heap' , t => {
 	t.is( b , 2 ) ;
 	t.is( c , 1 ) ;
 
-	t.true( z[1].empty( ) ) ;
+	t.true( z[1].isEmpty( ) ) ;
 	t.is( h.maxKey( ) , 3 ) ;
 	t.is( x[1].maxKey( ) , 2 ) ;
 	t.is( y[1].maxKey( ) , 1 ) ;

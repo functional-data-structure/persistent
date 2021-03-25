@@ -11,7 +11,7 @@ test( 'intervaltree' ,  t => {
 
 	let i = IntervalTree.empty( ) ;
 
-	t.true( i.empty( ) ) ;
+	t.true( i.isEmpty( ) ) ;
 
 	i = i.insert( [ 1 , 7 ] ) ;
 	i = i.insert( [ 3 , 9 ] ) ;

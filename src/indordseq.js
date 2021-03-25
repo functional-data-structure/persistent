@@ -9,8 +9,8 @@ const IndOrdSeq = function ( tree ) {
 	this.tree = tree ;
 } ;
 
-IndOrdSeq.prototype.empty = function ( ) {
-	return this.tree.empty( ) ;
+IndOrdSeq.prototype.isEmpty = function ( ) {
+	return this.tree.isEmpty( ) ;
 } ;
 
 IndOrdSeq.prototype.measure = function ( ) {
@@ -72,7 +72,7 @@ IndOrdSeq.prototype.deleteAll = function ( value ) {
 
 IndOrdSeq.prototype.merge = function ( other ) {
 
-	if ( other.empty( ) ) return this ;
+	if ( other.isEmpty( ) ) return this ;
 
 	const a = other.head( ) ;
 	const k = key.measure( a ) ;
