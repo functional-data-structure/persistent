@@ -115,7 +115,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aureooms/js-persistent.git"
+    "url": "https://github.com/aureooms/js-persistent"
   },
   "scripts": {
     "build": "babel --delete-dir-on-start --env-name production src -d lib",
