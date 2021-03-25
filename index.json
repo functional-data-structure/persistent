@@ -1,0 +1,880 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/heap.js",
+    "content": "export function heap(empty, max) {\n\tconst Heap = function (tree) {\n\t\tthis.tree = tree;\n\t};\n\n\tHeap.prototype.isEmpty = function () {\n\t\treturn this.tree.isEmpty();\n\t};\n\n\tHeap.prototype.maxKey = Heap.prototype.measure = function () {\n\t\treturn this.tree.measure();\n\t};\n\n\tHeap.prototype.insert = Heap.prototype.push = function (value) {\n\t\treturn new Heap(this.tree.push(value));\n\t};\n\n\tHeap.prototype.extractMax = function () {\n\t\tconst ub = this.measure();\n\t\tconst split = this.tree.splitTree((m) => m >= ub, max.zero());\n\t\treturn [split.middle, new Heap(split.left.concat(split.right))];\n\t};\n\n\tHeap.prototype.insertValues = function (values) {\n\t\tlet s = this;\n\n\t\tfor (const value of values) s = s.insert(value);\n\n\t\treturn s;\n\t};\n\n\treturn {\n\t\tempty: () => new Heap(empty(max)),\n\t\tfrom: (iterable) => new Heap(empty(max)).insertValues(iterable),\n\t};\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/js-persistent/js-persistent/src/heap.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "function",
+    "name": "heap",
+    "memberof": "src/heap.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/heap.js~heap",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-persistent/src/heap.js",
+    "importStyle": "{heap}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "empty",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "max",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"empty\": *, \"from\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "export * from './heap.js';\nexport * from './indordseq.js';\nexport * from './intervaltree.js';\nexport * from './ordseq.js';\nexport * from './seq.js';\n",
+    "static": true,
+    "longname": "/home/runner/work/js-persistent/js-persistent/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 51,
+    "kind": "file",
+    "name": "src/indordseq.js",
+    "content": "export function indordseq(empty, key, size, measure) {\n\t// Probably needs a total order instead of a measure\n\t// this causes generality problems in the insert, merge, partition and delete\n\t// methods\n\n\tconst IndOrdSeq = function (tree) {\n\t\tthis.tree = tree;\n\t};\n\n\tIndOrdSeq.prototype.isEmpty = function () {\n\t\treturn this.tree.isEmpty();\n\t};\n\n\tIndOrdSeq.prototype.measure = function () {\n\t\treturn this.tree.measure();\n\t};\n\n\tIndOrdSeq.prototype.min = IndOrdSeq.prototype.head = function () {\n\t\treturn this.tree.head();\n\t};\n\n\tIndOrdSeq.prototype.tail = function () {\n\t\treturn new IndOrdSeq(this.tree.tail());\n\t};\n\n\tIndOrdSeq.prototype.max = IndOrdSeq.prototype.last = function () {\n\t\treturn this.tree.last();\n\t};\n\n\tIndOrdSeq.prototype.init = function () {\n\t\treturn new IndOrdSeq(this.tree.init());\n\t};\n\n\tIndOrdSeq.prototype.takeUntil = function (predicate) {\n\t\treturn new IndOrdSeq(this.tree.takeUntil(predicate));\n\t};\n\n\tIndOrdSeq.prototype.dropUntil = function (predicate) {\n\t\treturn new IndOrdSeq(this.tree.dropUntil(predicate));\n\t};\n\n\tIndOrdSeq.prototype[Symbol.iterator] = function () {\n\t\treturn this.tree[Symbol.iterator]();\n\t};\n\n\tIndOrdSeq.prototype.split = function (predicate) {\n\t\tconst [left, right] = this.tree.split(predicate);\n\t\treturn [new IndOrdSeq(left), new IndOrdSeq(right)];\n\t};\n\n\tIndOrdSeq.prototype.partition = function (value) {\n\t\tconst k = key.measure(value);\n\t\treturn this.split((m) => m[0] >= k);\n\t};\n\n\tIndOrdSeq.prototype.insert = function (value) {\n\t\tconst k = key.measure(value);\n\t\tconst [left, right] = this.tree.split((m) => m[0] >= k);\n\t\treturn new IndOrdSeq(left.push(value).concat(right));\n\t};\n\n\tIndOrdSeq.prototype.deleteAll = function (value) {\n\t\tconst k = key.measure(value);\n\t\tconst [l, r] = this.tree.split((m) => m[0] >= k);\n\t\tconst [, R] = r.split((m) => m[0] > k);\n\t\treturn new IndOrdSeq(l.concat(R));\n\t};\n\n\tIndOrdSeq.prototype.merge = function (other) {\n\t\tif (other.isEmpty()) return this;\n\n\t\tconst a = other.head();\n\t\tconst k = key.measure(a);\n\n\t\tconst [l, r] = this.split((m) => m[0] > k);\n\n\t\treturn new IndOrdSeq(l.tree.push(a).concat(r.merge(other.tail()).tree));\n\t};\n\n\tIndOrdSeq.prototype.insertValues = function (values) {\n\t\tlet s = this;\n\n\t\tfor (const value of values) s = s.insert(value);\n\n\t\treturn s;\n\t};\n\n\tIndOrdSeq.prototype.len = function () {\n\t\treturn this.tree.measure()[1];\n\t};\n\n\tIndOrdSeq.prototype.get = function (index) {\n\t\tif (index < 0 || index >= this.len())\n\t\t\tthrow new Error(`wrong index '${index}'`);\n\n\t\treturn this.tree.splitTree((m) => m[1] > index, measure.zero()).middle;\n\t};\n\n\tIndOrdSeq.prototype.splitAt = function (index) {\n\t\treturn this.split((m) => m[1] > index);\n\t};\n\n\treturn {\n\t\tempty: () => new IndOrdSeq(empty(measure)),\n\t\tfrom: (iterable) => new IndOrdSeq(empty(measure)).insertValues(iterable),\n\t};\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/js-persistent/js-persistent/src/indordseq.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "name": "indordseq",
+    "memberof": "src/indordseq.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/indordseq.js~indordseq",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-persistent/src/indordseq.js",
+    "importStyle": "{indordseq}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "empty",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "size",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "measure",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"empty\": *, \"from\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "file",
+    "name": "src/intervaltree.js",
+    "content": "export function intervaltree(empty, M) {\n\tconst atleast = function (k, [_, n]) {\n\t\treturn k <= n;\n\t};\n\n\tconst greater = function (k, [n, _]) {\n\t\treturn n > k;\n\t};\n\n\tconst matches = function* (low, tree) {\n\t\tconst xs = tree.dropUntil((m) => atleast(low, m));\n\n\t\tif (xs.isEmpty()) return;\n\n\t\tyield xs.head();\n\n\t\tyield* matches(low, xs.tail());\n\t};\n\n\tconst IntervalTree = function (tree) {\n\t\tthis.tree = tree;\n\t};\n\n\tIntervalTree.prototype.isEmpty = function () {\n\t\treturn this.tree.isEmpty();\n\t};\n\n\tIntervalTree.prototype.measure = function () {\n\t\treturn this.tree.measure();\n\t};\n\n\tIntervalTree.prototype.head = function () {\n\t\treturn this.tree.head();\n\t};\n\n\tIntervalTree.prototype.tail = function () {\n\t\treturn new IntervalTree(this.tree.tail());\n\t};\n\n\tIntervalTree.prototype.last = function () {\n\t\treturn this.tree.last();\n\t};\n\n\tIntervalTree.prototype.init = function () {\n\t\treturn new IntervalTree(this.tree.init());\n\t};\n\n\tIntervalTree.prototype.takeUntil = function (predicate) {\n\t\treturn new IntervalTree(this.tree.takeUntil(predicate));\n\t};\n\n\tIntervalTree.prototype.dropUntil = function (predicate) {\n\t\treturn new IntervalTree(this.tree.dropUntil(predicate));\n\t};\n\n\tIntervalTree.prototype.split = function (predicate) {\n\t\tconst [left, right] = this.tree.split(predicate);\n\t\treturn [new IntervalTree(left), new IntervalTree(right)];\n\t};\n\n\tIntervalTree.prototype[Symbol.iterator] = function () {\n\t\treturn this.tree[Symbol.iterator]();\n\t};\n\n\tIntervalTree.prototype.insert = function (interval) {\n\t\tconst k = M.measure(interval)[0];\n\t\tconst [left, right] = this.tree.split((m) => m[0] >= k);\n\t\treturn new IntervalTree(left.push(interval).concat(right));\n\t};\n\n\tIntervalTree.prototype.merge = function (other) {\n\t\tif (other.isEmpty()) return this;\n\n\t\tconst a = other.head();\n\t\tconst k = M.measure(a)[0];\n\n\t\tconst [l, r] = this.split((m) => m[0] > k);\n\n\t\treturn new IntervalTree(l.tree.push(a).concat(r.merge(other.tail()).tree));\n\t};\n\n\tIntervalTree.prototype.insertValues = function (values) {\n\t\tlet s = this;\n\n\t\tfor (const value of values) s = s.insert(value);\n\n\t\treturn s;\n\t};\n\n\tIntervalTree.prototype.intervalSearch = function (interval) {\n\t\tif (!atleast(interval[0], this.measure())) return null;\n\n\t\tconst k = M.measure(interval)[0];\n\n\t\tconst {middle} = this.tree.splitTree((m) => atleast(k, m), M.zero());\n\n\t\treturn middle[0] > interval[1] ? null : middle;\n\t};\n\n\tIntervalTree.prototype.intervalMatch = function (interval) {\n\t\tconst k = M.measure(interval)[1];\n\t\treturn matches(\n\t\t\tinterval[0],\n\t\t\tthis.tree.takeUntil((m) => greater(k, m)),\n\t\t);\n\t};\n\n\treturn {\n\t\tempty: () => new IntervalTree(empty(M)),\n\t\tfrom: (iterable) => new IntervalTree(empty(M)).insertValues(iterable),\n\t};\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/js-persistent/js-persistent/src/intervaltree.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 54,
+    "kind": "function",
+    "name": "intervaltree",
+    "memberof": "src/intervaltree.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/intervaltree.js~intervaltree",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-persistent/src/intervaltree.js",
+    "importStyle": "{intervaltree}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "empty",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "M",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"empty\": *, \"from\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "file",
+    "name": "src/ordseq.js",
+    "content": "export function ordseq(empty, key) {\n\t// Probably needs a total order instead of a key measure\n\t// this causes generality problems in the insert, merge, partition and delete\n\t// methods\n\n\tconst OrdSeq = function (tree) {\n\t\tthis.tree = tree;\n\t};\n\n\tOrdSeq.prototype.isEmpty = function () {\n\t\treturn this.tree.isEmpty();\n\t};\n\n\tOrdSeq.prototype.measure = function () {\n\t\treturn this.tree.measure();\n\t};\n\n\tOrdSeq.prototype.min = OrdSeq.prototype.head = function () {\n\t\treturn this.tree.head();\n\t};\n\n\tOrdSeq.prototype.tail = function () {\n\t\treturn new OrdSeq(this.tree.tail());\n\t};\n\n\tOrdSeq.prototype.max = OrdSeq.prototype.last = function () {\n\t\treturn this.tree.last();\n\t};\n\n\tOrdSeq.prototype.init = function () {\n\t\treturn new OrdSeq(this.tree.init());\n\t};\n\n\tOrdSeq.prototype.takeUntil = function (predicate) {\n\t\treturn new OrdSeq(this.tree.takeUntil(predicate));\n\t};\n\n\tOrdSeq.prototype.dropUntil = function (predicate) {\n\t\treturn new OrdSeq(this.tree.dropUntil(predicate));\n\t};\n\n\tOrdSeq.prototype[Symbol.iterator] = function () {\n\t\treturn this.tree[Symbol.iterator]();\n\t};\n\n\tOrdSeq.prototype.split = function (predicate) {\n\t\tconst [left, right] = this.tree.split(predicate);\n\t\treturn [new OrdSeq(left), new OrdSeq(right)];\n\t};\n\n\tOrdSeq.prototype.partition = function (value) {\n\t\tconst k = key.measure(value);\n\t\treturn this.split((m) => m >= k);\n\t};\n\n\tOrdSeq.prototype.insert = function (value) {\n\t\tconst k = key.measure(value);\n\t\tconst [left, right] = this.tree.split((m) => m >= k);\n\t\treturn new OrdSeq(left.push(value).concat(right));\n\t};\n\n\tOrdSeq.prototype.deleteAll = function (value) {\n\t\tconst k = key.measure(value);\n\t\tconst [l, r] = this.tree.split((m) => m >= k);\n\t\tconst [, R] = r.split((m) => m > k);\n\t\treturn new OrdSeq(l.concat(R));\n\t};\n\n\tOrdSeq.prototype.merge = function (other) {\n\t\tif (other.isEmpty()) return this;\n\n\t\tconst a = other.head();\n\t\tconst k = key.measure(a);\n\n\t\tconst [l, r] = this.split((m) => m > k);\n\n\t\treturn new OrdSeq(l.tree.push(a).concat(r.merge(other.tail()).tree));\n\t};\n\n\tOrdSeq.prototype.insertValues = function (values) {\n\t\tlet s = this;\n\n\t\tfor (const value of values) s = s.insert(value);\n\n\t\treturn s;\n\t};\n\n\treturn {\n\t\tempty: () => new OrdSeq(empty(key)),\n\t\tfrom: (iterable) => new OrdSeq(empty(key)).insertValues(iterable),\n\t};\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/js-persistent/js-persistent/src/ordseq.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 56,
+    "kind": "function",
+    "name": "ordseq",
+    "memberof": "src/ordseq.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/ordseq.js~ordseq",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-persistent/src/ordseq.js",
+    "importStyle": "{ordseq}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "empty",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"empty\": *, \"from\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "file",
+    "name": "src/seq.js",
+    "content": "export function seq(empty, size) {\n\tconst Seq = function (tree) {\n\t\tthis.tree = tree;\n\t};\n\n\tSeq.prototype.isEmpty = function () {\n\t\treturn this.tree.isEmpty();\n\t};\n\n\tSeq.prototype.measure = Seq.prototype.len = function () {\n\t\treturn this.tree.measure();\n\t};\n\n\tSeq.prototype.head = function () {\n\t\treturn this.tree.head();\n\t};\n\n\tSeq.prototype.tail = function () {\n\t\treturn new Seq(this.tree.tail());\n\t};\n\n\tSeq.prototype.last = function () {\n\t\treturn this.tree.last();\n\t};\n\n\tSeq.prototype.init = function () {\n\t\treturn new Seq(this.tree.init());\n\t};\n\n\tSeq.prototype.cons = function (value) {\n\t\treturn new Seq(this.tree.cons(value));\n\t};\n\n\tSeq.prototype.push = function (value) {\n\t\treturn new Seq(this.tree.push(value));\n\t};\n\n\tSeq.prototype.append = function (iterable) {\n\t\treturn new Seq(this.tree.append(iterable));\n\t};\n\n\tSeq.prototype.prepend = function (iterable) {\n\t\treturn new Seq(this.tree.prepend(iterable));\n\t};\n\n\tSeq.prototype.concat = function (other) {\n\t\treturn new Seq(this.tree.concat(other.tree));\n\t};\n\n\tSeq.prototype.takeUntil = function (predicate) {\n\t\treturn new Seq(this.tree.takeUntil(predicate));\n\t};\n\n\tSeq.prototype.dropUntil = function (predicate) {\n\t\treturn new Seq(this.tree.dropUntil(predicate));\n\t};\n\n\tSeq.prototype.set = function (index, value) {\n\t\tif (index < 0 || index >= this.len())\n\t\t\tthrow new Error(`wrong index '${index}'`);\n\n\t\tconst split = this.tree.splitTree((m) => m > index, size.zero());\n\n\t\treturn new Seq(split.left.push(value).concat(split.right));\n\t};\n\n\tSeq.prototype.get = function (index) {\n\t\tif (index < 0 || index >= this.len())\n\t\t\tthrow new Error(`wrong index '${index}'`);\n\n\t\treturn this.tree.splitTree((m) => m > index, size.zero()).middle;\n\t};\n\n\tSeq.prototype.insert = function (index, value) {\n\t\tif (index < 0 || index >= this.len())\n\t\t\tthrow new Error(`wrong index '${index}'`);\n\n\t\tconst [prefix, rest] = this.tree.split((m) => m > index);\n\t\treturn new Seq(prefix.push(value).concat(rest));\n\t};\n\n\tSeq.prototype.remove = function (index) {\n\t\tif (index < 0 || index >= this.len())\n\t\t\tthrow new Error(`wrong index '${index}'`);\n\n\t\tconst {left, right} = this.tree.splitTree((m) => m > index, size.zero());\n\t\treturn new Seq(left.concat(right));\n\t};\n\n\tSeq.prototype.slice = function (start = 0, end = this.len()) {\n\t\tif (start < -this.len() || start > this.len())\n\t\t\tthrow new Error(`wrong start '${start}'`);\n\t\tif (end < -this.len() || end > this.len())\n\t\t\tthrow new Error(`wrong end '${end}'`);\n\n\t\tif (start < 0) start += this.len();\n\t\tif (end < 0) end += this.len();\n\n\t\tconst [, rest] = this.tree.split((m) => m > start);\n\t\tconst [slice] = rest.split((m) => m > end - start);\n\t\treturn new Seq(slice);\n\t};\n\n\tSeq.prototype.splice = function (start, deleteCount, ...items) {\n\t\tconst length = this.len();\n\n\t\tif (start < -length || start >= length)\n\t\t\tthrow new Error(`wrong start '${start}'`);\n\n\t\tif (start < 0) start += length;\n\t\telse if (start === length) {\n\t\t\treturn [new Seq(this.tree.append(items)), new Seq(empty(size))];\n\t\t}\n\n\t\tconst split = this.tree.splitTree((m) => m > start, size.zero());\n\n\t\tif (deleteCount === 1) {\n\t\t\tif (items.length === 0) {\n\t\t\t\treturn [\n\t\t\t\t\tnew Seq(split.left.concat(split.right)),\n\t\t\t\t\tnew Seq(empty(size).push(split.middle)),\n\t\t\t\t];\n\t\t\t}\n\n\t\t\treturn [\n\t\t\t\tnew Seq(split.left.append(items).concat(split.right)),\n\t\t\t\tnew Seq(empty(size).push(split.middle)),\n\t\t\t];\n\t\t}\n\n\t\tconst prefix = split.left;\n\t\tconst rest = split.right.cons(split.middle);\n\n\t\tif (deleteCount === 0) {\n\t\t\treturn [new Seq(prefix.append(items).concat(rest)), new Seq(empty(size))];\n\t\t}\n\n\t\tif (deleteCount === undefined) {\n\t\t\treturn [new Seq(prefix.append(items)), new Seq(rest)];\n\t\t}\n\n\t\tconst [deleted, suffix] = rest.split((m) => m > deleteCount);\n\t\treturn [new Seq(prefix.append(items).concat(suffix)), new Seq(deleted)];\n\t};\n\n\tSeq.prototype[Symbol.iterator] = function () {\n\t\treturn this.tree[Symbol.iterator]();\n\t};\n\n\tSeq.prototype.split = function (predicate) {\n\t\tconst [left, right] = this.tree.split(predicate);\n\t\treturn [new Seq(left), new Seq(right)];\n\t};\n\n\tSeq.prototype.splitAt = function (index) {\n\t\treturn this.split((m) => m > index);\n\t};\n\n\treturn {\n\t\tempty: () => new Seq(empty(size)),\n\t\tfrom: (iterable) => new Seq(empty(size)).append(iterable),\n\t};\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/js-persistent/js-persistent/src/seq.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 58,
+    "kind": "function",
+    "name": "seq",
+    "memberof": "src/seq.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/seq.js~seq",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-persistent/src/seq.js",
+    "importStyle": "{seq}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "empty",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "size",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"empty\": *, \"from\": *}"
+      ]
+    }
+  },
+  {
+    "kind": "index",
+    "content": ":evergreen_tree:\n[@aureooms/js-persistent](https://aureooms.github.io/js-persistent)\n==\n\nPersistent data structures code bricks for JavaScript. Parent is [aureooms/js-data-structures](https://github.com/aureooms/js-data-structures).\n\n```js\nlet Seq = persistent.seq( fingertree.empty , LEN ) ;\nlet Heap = persistent.heap( fingertree.empty , MAX ) ;\nlet OrdSeq = persistent.ordseq( fingertree.empty , KEY ) ;\nlet IndOrdSeq = persistent.indordseq( fingertree.empty , KEY , LEN , KEY_LEN ) ;\nlet IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;\n```\n\n\n[![License](https://img.shields.io/github/license/aureooms/js-persistent.svg)](https://raw.githubusercontent.com/aureooms/js-persistent/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@aureooms/js-persistent.svg)](https://www.npmjs.org/package/@aureooms/js-persistent)\n[![Build](https://img.shields.io/travis/aureooms/js-persistent/main.svg)](https://travis-ci.com/aureooms/js-persistent/branches)\n[![Dependencies](https://img.shields.io/david/aureooms/js-persistent.svg)](https://david-dm.org/aureooms/js-persistent)\n[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-persistent.svg)](https://david-dm.org/aureooms/js-persistent?type=dev)\n[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-persistent.svg)](https://github.com/aureooms/js-persistent/issues)\n[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-persistent.svg)](https://www.npmjs.org/package/@aureooms/js-persistent)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-persistent.svg)](https://codeclimate.com/github/aureooms/js-persistent/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-persistent.svg)](https://codeclimate.com/github/aureooms/js-persistent/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-persistent/main.svg)](https://codecov.io/gh/aureooms/js-persistent)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-persistent.svg)](https://codeclimate.com/github/aureooms/js-persistent/trends/technical_debt)\n[![Documentation](https://aureooms.github.io/js-persistent/badge.svg)](https://aureooms.github.io/js-persistent/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-persistent)](https://bundlephobia.com/result?p=@aureooms/js-persistent)\n\n\n## :baby: Children\n\nThis package has one child:\n\n  - :cactus: [@aureooms/js-fingertree](https://github.com/aureooms/js-fingertree): Finger tree data structure for JavaScript\n\n\n## :scroll: References\n\n  - [Hinze and Paterson](http://staff.city.ac.uk/~ross/papers/FingerTree.pdf)\n\n",
+    "longname": "/home/runner/work/js-persistent/js-persistent/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"@aureooms/js-persistent\",\n  \"description\": \"Persistent data structures for JavaScript\",\n  \"version\": \"3.0.0\",\n  \"license\": \"AGPL-3.0\",\n  \"author\": \"Aurélien Ooms <aurelien.ooms@gmail.com>\",\n  \"homepage\": \"https://aureooms.github.io/js-persistent\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-persistent\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-persistent/issues\"\n  },\n  \"keywords\": [\n    \"data\",\n    \"javascript\",\n    \"js\",\n    \"persistent\",\n    \"structures\"\n  ],\n  \"sideEffects\": false,\n  \"source\": \"src/index.js\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"dist/index.module.js\",\n  \"umd:main\": \"dist/index.umd.js\",\n  \"unpkg\": \"dist/index.umd.js\",\n  \"exports\": {\n    \".\": {\n      \"browser\": \"./dist/index.module.js\",\n      \"umd\": \"./dist/index.umd.js\",\n      \"require\": \"./dist/index.js\",\n      \"default\": \"./dist/index.modern.js\"\n    }\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production microbundle\",\n    \"build-docs\": \"esdoc\",\n    \"build-gh-pages\": \"npm run build-docs\",\n    \"commit-msg\": \"commitlint --edit\",\n    \"cover\": \"c8 --all --src src --reporter=lcov npm test\",\n    \"debug\": \"NODE_ENV=debug npm run test -- -st --fail-fast\",\n    \"dev\": \"npm run lint-config-and-fix && npm run lint-and-fix && npm run cover -- -- -st --fail-fast\",\n    \"install-hooks\": \"husky install\",\n    \"lint\": \"xo\",\n    \"lint-and-fix\": \"npm run lint -- --fix\",\n    \"lint-config\": \"fixpack --dryRun\",\n    \"lint-config-and-fix\": \"fixpack || fixpack\",\n    \"postinstall\": \"npm run install-hooks\",\n    \"postpublish\": \"pinst --enable\",\n    \"precommit\": \"lint-staged\",\n    \"prepare\": \"npm run build\",\n    \"prepublishOnly\": \"pinst --disable\",\n    \"release\": \"np --message ':hatching_chick: release: Bumping to v%s.'\",\n    \"test\": \"ava\",\n    \"travis\": \"npm run lint-config && npm run lint && npm run cover\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"@aureooms/js-fingertree\": \"6.0.0\",\n    \"@aureooms/js-itertools\": \"5.1.0\",\n    \"@aureooms/js-measure\": \"2.0.0\",\n    \"@aureooms/js-predicate\": \"3.0.1\",\n    \"@babel/core\": \"7.13.10\",\n    \"@babel/preset-env\": \"7.13.12\",\n    \"@babel/register\": \"7.13.8\",\n    \"@commitlint/cli\": \"12.0.1\",\n    \"@js-library/commitlint-config\": \"0.0.4\",\n    \"ava\": \"3.15.0\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.0.1\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"c8\": \"7.6.0\",\n    \"coveralls\": \"3.1.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"fixpack\": \"4.0.0\",\n    \"husky\": \"5.2.0\",\n    \"lint-staged\": \"10.5.4\",\n    \"microbundle\": \"0.13.0\",\n    \"np\": \"7.4.0\",\n    \"pinst\": \"2.1.6\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.7\",\n    \"xo\": \"0.38.2\"\n  },\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\",\n      \"@babel/register\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"sourceMaps\": true,\n    \"presets\": [\n      [\n        \"@babel/preset-env\",\n        {\n          \"targets\": [\n            \"defaults\",\n            \"maintained node versions\"\n          ]\n        }\n      ]\n    ],\n    \"env\": {\n      \"debug\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": \"current node\"\n            }\n          ],\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"test\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": \"current node\"\n            }\n          ],\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      },\n      \"development\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      },\n      \"production\": {\n        \"plugins\": [\n          \"babel-plugin-unassert\",\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      }\n    }\n  },\n  \"lint-staged\": {\n    \"*.js\": [\n      \"npm run lint-and-fix\"\n    ],\n    \"package.json\": [\n      \"npm run lint-config-and-fix\"\n    ]\n  },\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"xo\": {\n    \"prettier\": true,\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": \"off\",\n      \"camelcase\": \"off\",\n      \"unicorn/prevent-abbreviations\": \"off\",\n      \"no-constant-condition\": \"off\",\n      \"no-multi-assign\": \"off\",\n      \"unicorn/no-this-assignment\": \"off\",\n      \"unicorn/prefer-math-trunc\": \"off\",\n      \"unicorn/no-new-array\": \"off\",\n      \"no-negated-condition\": \"off\"\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
+    "longname": "/home/runner/work/js-persistent/js-persistent/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manualIndex",
+    "globalIndex": false,
+    "content": null,
+    "longname": "",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/home/runner/work/js-persistent/js-persistent/doc/manual/overview.md",
+    "name": "./doc/manual/overview.md",
+    "content": "# Overview\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/home/runner/work/js-persistent/js-persistent/doc/manual/installation.md",
+    "name": "./doc/manual/installation.md",
+    "content": "# Installation\nCan be managed using\n[jspm](http://jspm.io)\nor [npm](https://github.com/npm/npm).\n\n### jspm\n```terminal\njspm install npm:@aureooms/js-persistent\n```\n\n### npm\n```terminal\nnpm install @aureooms/js-persistent --save\n```\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/home/runner/work/js-persistent/js-persistent/doc/manual/usage.md",
+    "name": "./doc/manual/usage.md",
+    "content": "# Usage\nThe code needs a ES2015+ polyfill to work, for example\n[regenerator-runtime/runtime](https://babeljs.io/docs/usage/polyfill).\n```js\nrequire( 'regenerator-runtime/runtime' ) ;\n// or\nimport 'regenerator-runtime/runtime.js' ;\n```\n\nThen\n```js\nconst persistent = require( '@aureooms/js-persistent' ) ;\n// or\nimport persistent from '@aureooms/js-persistent' ;\n```\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/home/runner/work/js-persistent/js-persistent/doc/manual/example.md",
+    "name": "./doc/manual/example.md",
+    "content": "# Examples\n```js\nimport { Measures } from '@aureooms/js-measure' ;\nimport { empty } from '@aureooms/js-fingertree' ;\nimport persistent from '@aureooms/js-persistent' ;\n\nlet Seq = persistent.seq( empty , Measures.LEN ) ;\nlet Heap = persistent.heap( empty , Measures.MAX ) ;\nlet OrdSeq = persistent.ordseq( empty , Measures.KEY ) ;\nlet IndOrdSeq = persistent.indordseq( empty , Measures.KEY , Measures.LEN , Measures.KEY_LEN ) ;\nlet IntervalTree = persistent.intervaltree( empty , Measures.INTERVAL ) ;\n\nlet seq = Seq.from( 'abc' ) ;\nseq.get( 1 ) ; // 'b'\n\nlet heap = Heap.from( [ 1 , 3 , 2 ] ) ;\nheap.extractMax( ) ; // [ 3 , Heap{1,2} ]\n\nlet ordseq = OrdSeq.from( 'abracadabra' ) ;\n[ ...ordseq ] ; // aaaaabbcdrr\n\nlet indordseq = IndOrdSeq.from( 'abracadabra' ) ;\n[ ...indordseq ] ; // aaaaabbcdrr\nindordseq.get( 7 ) ; // 'c'\n\nlet intervaltree = IntervalTree.from( [ [ 1 , 5 ] , [ 4 , 9 ] ] ) ;\nintervaltree.intervalSearch( [ -7 , 3 ] ) ; // [ 1 , 5 ]\nintervaltree.intervalSearch( [ 7 , 12 ] ) ; // [ 4 , 9 ]\nintervaltree.intervalSearch( [ 11 , 12 ] ) ; // null\n```\n",
+    "static": true,
+    "access": "public"
+  }
+]

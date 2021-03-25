@@ -3,16 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/seq.js | aureooms/js-persistent API Document</title>
+  <title data-ice="title">src/seq.js | @aureooms/js-persistent</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-<script data-ice="userScript" src="user/script/0-header.js"></script>
-<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
-</head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Persistent data structures for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-persistent"><meta property="twitter:description" content="Persistent data structures for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -20,8 +16,7 @@
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  <a href="test.html" data-ice="testLink">Test</a>
-  <a data-ice="repoURL" href="https://github.com/aureooms/js-persistent.git" class="repo-url-github">Repository</a>
+  
   <div class="search-box">
   <span>
     <img src="./image/search.png">
@@ -29,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-persistent"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -44,110 +39,175 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/seq.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
-export function seq ( empty , size ) {
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export function seq(empty, size) {
+	const Seq = function (tree) {
+		this.tree = tree;
+	};
 
-const Seq = function ( tree ) {
-	this.tree = tree ;
-} ;
+	Seq.prototype.isEmpty = function () {
+		return this.tree.isEmpty();
+	};
 
-Seq.prototype.empty = function ( ) {
-	return this.tree.empty( ) ;
-} ;
+	Seq.prototype.measure = Seq.prototype.len = function () {
+		return this.tree.measure();
+	};
 
-Seq.prototype.measure =
-Seq.prototype.len = function ( ) {
-	return this.tree.measure( ) ;
-} ;
+	Seq.prototype.head = function () {
+		return this.tree.head();
+	};
 
-Seq.prototype.head = function ( ) {
-	return this.tree.head( ) ;
-} ;
+	Seq.prototype.tail = function () {
+		return new Seq(this.tree.tail());
+	};
 
-Seq.prototype.tail = function ( ) {
-	return new Seq( this.tree.tail( ) ) ;
-} ;
+	Seq.prototype.last = function () {
+		return this.tree.last();
+	};
 
-Seq.prototype.last = function ( ) {
-	return this.tree.last( ) ;
-} ;
+	Seq.prototype.init = function () {
+		return new Seq(this.tree.init());
+	};
 
-Seq.prototype.init = function ( ) {
-	return new Seq( this.tree.init( ) ) ;
-} ;
+	Seq.prototype.cons = function (value) {
+		return new Seq(this.tree.cons(value));
+	};
 
-Seq.prototype.cons = function ( value ) {
-	return new Seq( this.tree.cons( value ) ) ;
-} ;
+	Seq.prototype.push = function (value) {
+		return new Seq(this.tree.push(value));
+	};
 
-Seq.prototype.push = function ( value ) {
-	return new Seq( this.tree.push( value ) ) ;
-} ;
+	Seq.prototype.append = function (iterable) {
+		return new Seq(this.tree.append(iterable));
+	};
 
-Seq.prototype.append = function ( iterable ) {
-	return new Seq( this.tree.append( iterable ) ) ;
-} ;
+	Seq.prototype.prepend = function (iterable) {
+		return new Seq(this.tree.prepend(iterable));
+	};
 
-Seq.prototype.prepend = function ( iterable ) {
-	return new Seq( this.tree.prepend( iterable ) ) ;
-} ;
+	Seq.prototype.concat = function (other) {
+		return new Seq(this.tree.concat(other.tree));
+	};
 
-Seq.prototype.concat = function ( other ) {
-	return new Seq( this.tree.concat( other.tree ) ) ;
-} ;
+	Seq.prototype.takeUntil = function (predicate) {
+		return new Seq(this.tree.takeUntil(predicate));
+	};
 
-Seq.prototype.takeUntil = function ( predicate ) {
-	return new Seq( this.tree.takeUntil( predicate ) ) ;
-} ;
+	Seq.prototype.dropUntil = function (predicate) {
+		return new Seq(this.tree.dropUntil(predicate));
+	};
 
-Seq.prototype.dropUntil = function ( predicate ) {
-	return new Seq( this.tree.dropUntil( predicate ) ) ;
-} ;
+	Seq.prototype.set = function (index, value) {
+		if (index &lt; 0 || index &gt;= this.len())
+			throw new Error(`wrong index &apos;${index}&apos;`);
 
-Seq.prototype.set = function ( index , value ) {
+		const split = this.tree.splitTree((m) =&gt; m &gt; index, size.zero());
 
-	if ( index &lt; 0 || index &gt;= this.len( ) ) throw new Error( `wrong index &apos;${index}&apos;` ) ;
+		return new Seq(split.left.push(value).concat(split.right));
+	};
 
-	const split = this.tree.splitTree( ( m ) =&gt; m &gt; index , size.zero( ) ) ;
+	Seq.prototype.get = function (index) {
+		if (index &lt; 0 || index &gt;= this.len())
+			throw new Error(`wrong index &apos;${index}&apos;`);
 
-	return new Seq( split.left.push( value ).concat( split.right ) ) ;
+		return this.tree.splitTree((m) =&gt; m &gt; index, size.zero()).middle;
+	};
 
-} ;
+	Seq.prototype.insert = function (index, value) {
+		if (index &lt; 0 || index &gt;= this.len())
+			throw new Error(`wrong index &apos;${index}&apos;`);
 
-Seq.prototype.get = function ( index ) {
+		const [prefix, rest] = this.tree.split((m) =&gt; m &gt; index);
+		return new Seq(prefix.push(value).concat(rest));
+	};
 
-	if ( index &lt; 0 || index &gt;= this.len( ) ) throw new Error( `wrong index &apos;${index}&apos;` ) ;
+	Seq.prototype.remove = function (index) {
+		if (index &lt; 0 || index &gt;= this.len())
+			throw new Error(`wrong index &apos;${index}&apos;`);
 
-	return this.tree.splitTree( ( m ) =&gt; m &gt; index , size.zero( ) ).middle ;
+		const {left, right} = this.tree.splitTree((m) =&gt; m &gt; index, size.zero());
+		return new Seq(left.concat(right));
+	};
 
-} ;
+	Seq.prototype.slice = function (start = 0, end = this.len()) {
+		if (start &lt; -this.len() || start &gt; this.len())
+			throw new Error(`wrong start &apos;${start}&apos;`);
+		if (end &lt; -this.len() || end &gt; this.len())
+			throw new Error(`wrong end &apos;${end}&apos;`);
 
+		if (start &lt; 0) start += this.len();
+		if (end &lt; 0) end += this.len();
 
-Seq.prototype[Symbol.iterator] = function ( ) {
-	return this.tree[Symbol.iterator]( ) ;
-} ;
+		const [, rest] = this.tree.split((m) =&gt; m &gt; start);
+		const [slice] = rest.split((m) =&gt; m &gt; end - start);
+		return new Seq(slice);
+	};
 
-Seq.prototype.split = function ( predicate ) {
-	const [ left , right ] = this.tree.split( predicate ) ;
-	return [ new Seq( left ) , new Seq( right ) ] ;
-} ;
+	Seq.prototype.splice = function (start, deleteCount, ...items) {
+		const length = this.len();
 
-Seq.prototype.splitAt = function ( index ) {
-	return this.split( ( m ) =&gt; m &gt; index ) ;
-} ;
+		if (start &lt; -length || start &gt;= length)
+			throw new Error(`wrong start &apos;${start}&apos;`);
 
-return {
-	empty : ( ) =&gt; new Seq( empty( size ) ) ,
-	from : ( iterable ) =&gt; new Seq( empty( size ) ).append( iterable )
-} ;
+		if (start &lt; 0) start += length;
+		else if (start === length) {
+			return [new Seq(this.tree.append(items)), new Seq(empty(size))];
+		}
 
+		const split = this.tree.splitTree((m) =&gt; m &gt; start, size.zero());
+
+		if (deleteCount === 1) {
+			if (items.length === 0) {
+				return [
+					new Seq(split.left.concat(split.right)),
+					new Seq(empty(size).push(split.middle)),
+				];
+			}
+
+			return [
+				new Seq(split.left.append(items).concat(split.right)),
+				new Seq(empty(size).push(split.middle)),
+			];
+		}
+
+		const prefix = split.left;
+		const rest = split.right.cons(split.middle);
+
+		if (deleteCount === 0) {
+			return [new Seq(prefix.append(items).concat(rest)), new Seq(empty(size))];
+		}
+
+		if (deleteCount === undefined) {
+			return [new Seq(prefix.append(items)), new Seq(rest)];
+		}
+
+		const [deleted, suffix] = rest.split((m) =&gt; m &gt; deleteCount);
+		return [new Seq(prefix.append(items).concat(suffix)), new Seq(deleted)];
+	};
+
+	Seq.prototype[Symbol.iterator] = function () {
+		return this.tree[Symbol.iterator]();
+	};
+
+	Seq.prototype.split = function (predicate) {
+		const [left, right] = this.tree.split(predicate);
+		return [new Seq(left), new Seq(right)];
+	};
+
+	Seq.prototype.splitAt = function (index) {
+		return this.split((m) =&gt; m &gt; index);
+	};
+
+	return {
+		empty: () =&gt; new Seq(empty(size)),
+		from: (iterable) =&gt; new Seq(empty(size)).append(iterable),
+	};
 }
 </code></pre>
 
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

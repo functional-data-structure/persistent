@@ -3,16 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/intervaltree.js | aureooms/js-persistent API Document</title>
+  <title data-ice="title">src/intervaltree.js | @aureooms/js-persistent</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-<script data-ice="userScript" src="user/script/0-header.js"></script>
-<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
-</head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Persistent data structures for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-persistent"><meta property="twitter:description" content="Persistent data structures for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -20,8 +16,7 @@
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  <a href="test.html" data-ice="testLink">Test</a>
-  <a data-ice="repoURL" href="https://github.com/aureooms/js-persistent.git" class="repo-url-github">Repository</a>
+  
   <div class="search-box">
   <span>
     <img src="./image/search.png">
@@ -29,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-persistent"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -44,135 +39,124 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/intervaltree.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
-export function intervaltree ( empty , M ) {
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export function intervaltree(empty, M) {
+	const atleast = function (k, [_, n]) {
+		return k &lt;= n;
+	};
 
-const atleast = function ( k , [ _ , n ] ) {
-	return k &lt;= n ;
-} ;
+	const greater = function (k, [n, _]) {
+		return n &gt; k;
+	};
 
-const greater = function ( k , [ n , _ ] ) {
-	return n &gt; k ;
-} ;
+	const matches = function* (low, tree) {
+		const xs = tree.dropUntil((m) =&gt; atleast(low, m));
 
-const matches = function* ( low , tree ) {
+		if (xs.isEmpty()) return;
 
-	const xs = tree.dropUntil( ( m ) =&gt; atleast( low , m ) ) ;
+		yield xs.head();
 
-	if ( xs.empty( ) ) return ;
+		yield* matches(low, xs.tail());
+	};
 
-	yield xs.head( ) ;
+	const IntervalTree = function (tree) {
+		this.tree = tree;
+	};
 
-	yield* matches( low , xs.tail( ) ) ;
+	IntervalTree.prototype.isEmpty = function () {
+		return this.tree.isEmpty();
+	};
 
-} ;
+	IntervalTree.prototype.measure = function () {
+		return this.tree.measure();
+	};
 
-const IntervalTree = function ( tree ) {
-	this.tree = tree ;
-} ;
+	IntervalTree.prototype.head = function () {
+		return this.tree.head();
+	};
 
-IntervalTree.prototype.empty = function ( ) {
-	return this.tree.empty( ) ;
-} ;
+	IntervalTree.prototype.tail = function () {
+		return new IntervalTree(this.tree.tail());
+	};
 
-IntervalTree.prototype.measure = function ( ) {
-	return this.tree.measure( ) ;
-} ;
+	IntervalTree.prototype.last = function () {
+		return this.tree.last();
+	};
 
-IntervalTree.prototype.head = function ( ) {
-	return this.tree.head( ) ;
-} ;
+	IntervalTree.prototype.init = function () {
+		return new IntervalTree(this.tree.init());
+	};
 
-IntervalTree.prototype.tail = function ( ) {
-	return new IntervalTree( this.tree.tail( ) ) ;
-} ;
+	IntervalTree.prototype.takeUntil = function (predicate) {
+		return new IntervalTree(this.tree.takeUntil(predicate));
+	};
 
-IntervalTree.prototype.last = function ( ) {
-	return this.tree.last( ) ;
-} ;
+	IntervalTree.prototype.dropUntil = function (predicate) {
+		return new IntervalTree(this.tree.dropUntil(predicate));
+	};
 
-IntervalTree.prototype.init = function ( ) {
-	return new IntervalTree( this.tree.init( ) ) ;
-} ;
+	IntervalTree.prototype.split = function (predicate) {
+		const [left, right] = this.tree.split(predicate);
+		return [new IntervalTree(left), new IntervalTree(right)];
+	};
 
-IntervalTree.prototype.takeUntil = function ( predicate ) {
-	return new IntervalTree( this.tree.takeUntil( predicate ) ) ;
-} ;
+	IntervalTree.prototype[Symbol.iterator] = function () {
+		return this.tree[Symbol.iterator]();
+	};
 
-IntervalTree.prototype.dropUntil = function ( predicate ) {
-	return new IntervalTree( this.tree.dropUntil( predicate ) ) ;
-} ;
+	IntervalTree.prototype.insert = function (interval) {
+		const k = M.measure(interval)[0];
+		const [left, right] = this.tree.split((m) =&gt; m[0] &gt;= k);
+		return new IntervalTree(left.push(interval).concat(right));
+	};
 
-IntervalTree.prototype.split = function ( predicate ) {
-	const [ left , right ] = this.tree.split( predicate ) ;
-	return [ new IntervalTree( left ) , new IntervalTree( right ) ] ;
-} ;
+	IntervalTree.prototype.merge = function (other) {
+		if (other.isEmpty()) return this;
 
-IntervalTree.prototype[Symbol.iterator] = function ( ) {
-	return this.tree[Symbol.iterator]( ) ;
-} ;
+		const a = other.head();
+		const k = M.measure(a)[0];
 
-IntervalTree.prototype.insert = function ( interval ) {
-	const k = M.measure( interval )[0] ;
-	const [ left , right ] = this.tree.split( ( m ) =&gt; m[0] &gt;= k ) ;
-	return new IntervalTree( left.push( interval ).concat( right ) ) ;
-} ;
+		const [l, r] = this.split((m) =&gt; m[0] &gt; k);
 
-IntervalTree.prototype.merge = function ( other ) {
+		return new IntervalTree(l.tree.push(a).concat(r.merge(other.tail()).tree));
+	};
 
-	if ( other.empty( ) ) return this ;
+	IntervalTree.prototype.insertValues = function (values) {
+		let s = this;
 
-	const a = other.head( ) ;
-	const k = M.measure( a )[0] ;
+		for (const value of values) s = s.insert(value);
 
-	const [ l , r ] = this.split( ( m ) =&gt; m[0] &gt; k ) ;
+		return s;
+	};
 
-	return new IntervalTree( l.tree.push( a ).concat( r.merge( other.tail( ) ).tree ) ) ;
+	IntervalTree.prototype.intervalSearch = function (interval) {
+		if (!atleast(interval[0], this.measure())) return null;
 
-} ;
+		const k = M.measure(interval)[0];
 
-IntervalTree.prototype.insertValues = function ( values ) {
+		const {middle} = this.tree.splitTree((m) =&gt; atleast(k, m), M.zero());
 
-	let s = this ;
+		return middle[0] &gt; interval[1] ? null : middle;
+	};
 
-	for ( const value of values ) s = s.insert( value ) ;
+	IntervalTree.prototype.intervalMatch = function (interval) {
+		const k = M.measure(interval)[1];
+		return matches(
+			interval[0],
+			this.tree.takeUntil((m) =&gt; greater(k, m)),
+		);
+	};
 
-	return s ;
-
-} ;
-
-IntervalTree.prototype.intervalSearch = function ( interval ) {
-
-	if ( !atleast( interval[0] , this.measure( ) ) ) return null ;
-
-	const k = M.measure( interval )[0] ;
-
-	const { middle } = this.tree.splitTree( ( m ) =&gt; atleast( k , m ) , M.zero( ) ) ;
-
-	return middle[0] &gt; interval[1] ? null : middle ;
-
-} ;
-
-IntervalTree.prototype.intervalMatch = function ( interval ) {
-
-	const k = M.measure( interval )[1] ;
-	return matches( interval[0] , this.tree.takeUntil( ( m ) =&gt; greater( k , m ) ) ) ;
-
-} ;
-
-
-return {
-	empty : ( ) =&gt; new IntervalTree( empty( M ) ) ,
-	from : ( iterable ) =&gt; new IntervalTree( empty( M ) ).insertValues( iterable )
-} ;
-
+	return {
+		empty: () =&gt; new IntervalTree(empty(M)),
+		from: (iterable) =&gt; new IntervalTree(empty(M)).insertValues(iterable),
+	};
 }
 </code></pre>
 
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

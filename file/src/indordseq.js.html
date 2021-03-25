@@ -3,16 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/indordseq.js | aureooms/js-persistent API Document</title>
+  <title data-ice="title">src/indordseq.js | @aureooms/js-persistent</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-<script data-ice="userScript" src="user/script/0-header.js"></script>
-<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
-</head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Persistent data structures for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-persistent"><meta property="twitter:description" content="Persistent data structures for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -20,8 +16,7 @@
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  <a href="test.html" data-ice="testLink">Test</a>
-  <a data-ice="repoURL" href="https://github.com/aureooms/js-persistent.git" class="repo-url-github">Repository</a>
+  
   <div class="search-box">
   <span>
     <img src="./image/search.png">
@@ -29,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-persistent"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -44,129 +39,119 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/indordseq.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
-export function indordseq ( empty , key , size , measure ) {
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export function indordseq(empty, key, size, measure) {
+	// Probably needs a total order instead of a measure
+	// this causes generality problems in the insert, merge, partition and delete
+	// methods
 
-// probably needs a total order instead of a measure
-// this causes generality problems in the insert, merge, partition and delete
-// methods
+	const IndOrdSeq = function (tree) {
+		this.tree = tree;
+	};
 
-const IndOrdSeq = function ( tree ) {
-	this.tree = tree ;
-} ;
+	IndOrdSeq.prototype.isEmpty = function () {
+		return this.tree.isEmpty();
+	};
 
-IndOrdSeq.prototype.empty = function ( ) {
-	return this.tree.empty( ) ;
-} ;
+	IndOrdSeq.prototype.measure = function () {
+		return this.tree.measure();
+	};
 
-IndOrdSeq.prototype.measure = function ( ) {
-	return this.tree.measure( ) ;
-} ;
+	IndOrdSeq.prototype.min = IndOrdSeq.prototype.head = function () {
+		return this.tree.head();
+	};
 
-IndOrdSeq.prototype.min =
-IndOrdSeq.prototype.head = function ( ) {
-	return this.tree.head( ) ;
-} ;
+	IndOrdSeq.prototype.tail = function () {
+		return new IndOrdSeq(this.tree.tail());
+	};
 
-IndOrdSeq.prototype.tail = function ( ) {
-	return new IndOrdSeq( this.tree.tail( ) ) ;
-} ;
+	IndOrdSeq.prototype.max = IndOrdSeq.prototype.last = function () {
+		return this.tree.last();
+	};
 
-IndOrdSeq.prototype.max =
-IndOrdSeq.prototype.last = function ( ) {
-	return this.tree.last( ) ;
-} ;
+	IndOrdSeq.prototype.init = function () {
+		return new IndOrdSeq(this.tree.init());
+	};
 
-IndOrdSeq.prototype.init = function ( ) {
-	return new IndOrdSeq( this.tree.init( ) ) ;
-} ;
+	IndOrdSeq.prototype.takeUntil = function (predicate) {
+		return new IndOrdSeq(this.tree.takeUntil(predicate));
+	};
 
-IndOrdSeq.prototype.takeUntil = function ( predicate ) {
-	return new IndOrdSeq( this.tree.takeUntil( predicate ) ) ;
-} ;
+	IndOrdSeq.prototype.dropUntil = function (predicate) {
+		return new IndOrdSeq(this.tree.dropUntil(predicate));
+	};
 
-IndOrdSeq.prototype.dropUntil = function ( predicate ) {
-	return new IndOrdSeq( this.tree.dropUntil( predicate ) ) ;
-} ;
+	IndOrdSeq.prototype[Symbol.iterator] = function () {
+		return this.tree[Symbol.iterator]();
+	};
 
-IndOrdSeq.prototype[Symbol.iterator] = function ( ) {
-	return this.tree[Symbol.iterator]( ) ;
-} ;
+	IndOrdSeq.prototype.split = function (predicate) {
+		const [left, right] = this.tree.split(predicate);
+		return [new IndOrdSeq(left), new IndOrdSeq(right)];
+	};
 
-IndOrdSeq.prototype.split = function ( predicate ) {
-	const [ left , right ] = this.tree.split( predicate ) ;
-	return [ new IndOrdSeq( left ) , new IndOrdSeq( right ) ] ;
-} ;
+	IndOrdSeq.prototype.partition = function (value) {
+		const k = key.measure(value);
+		return this.split((m) =&gt; m[0] &gt;= k);
+	};
 
-IndOrdSeq.prototype.partition = function ( value ) {
-	const k = key.measure( value ) ;
-	return this.split( m =&gt; m[0] &gt;= k ) ;
-} ;
+	IndOrdSeq.prototype.insert = function (value) {
+		const k = key.measure(value);
+		const [left, right] = this.tree.split((m) =&gt; m[0] &gt;= k);
+		return new IndOrdSeq(left.push(value).concat(right));
+	};
 
-IndOrdSeq.prototype.insert = function ( value ) {
-	const k = key.measure( value ) ;
-	const [ left , right ] = this.tree.split( m =&gt; m[0] &gt;= k ) ;
-	return new IndOrdSeq( left.push( value ).concat( right ) ) ;
-} ;
+	IndOrdSeq.prototype.deleteAll = function (value) {
+		const k = key.measure(value);
+		const [l, r] = this.tree.split((m) =&gt; m[0] &gt;= k);
+		const [, R] = r.split((m) =&gt; m[0] &gt; k);
+		return new IndOrdSeq(l.concat(R));
+	};
 
-IndOrdSeq.prototype.deleteAll = function ( value ) {
-	const k = key.measure( value ) ;
-	const [ l , r ] = this.tree.split( m =&gt; m[0] &gt;= k ) ;
-	const [ _ , R ] = r.split( m =&gt; m[0] &gt; k ) ;
-	return new IndOrdSeq( l.concat( R ) ) ;
-} ;
+	IndOrdSeq.prototype.merge = function (other) {
+		if (other.isEmpty()) return this;
 
-IndOrdSeq.prototype.merge = function ( other ) {
+		const a = other.head();
+		const k = key.measure(a);
 
-	if ( other.empty( ) ) return this ;
+		const [l, r] = this.split((m) =&gt; m[0] &gt; k);
 
-	const a = other.head( ) ;
-	const k = key.measure( a ) ;
+		return new IndOrdSeq(l.tree.push(a).concat(r.merge(other.tail()).tree));
+	};
 
-	const [ l , r ] = this.split( m =&gt; m[0] &gt; k ) ;
+	IndOrdSeq.prototype.insertValues = function (values) {
+		let s = this;
 
-	return new IndOrdSeq( l.tree.push( a ).concat( r.merge( other.tail( ) ).tree ) ) ;
+		for (const value of values) s = s.insert(value);
 
-} ;
+		return s;
+	};
 
-IndOrdSeq.prototype.insertValues = function ( values ) {
+	IndOrdSeq.prototype.len = function () {
+		return this.tree.measure()[1];
+	};
 
-	let s = this ;
+	IndOrdSeq.prototype.get = function (index) {
+		if (index &lt; 0 || index &gt;= this.len())
+			throw new Error(`wrong index &apos;${index}&apos;`);
 
-	for ( const value of values ) s = s.insert( value ) ;
+		return this.tree.splitTree((m) =&gt; m[1] &gt; index, measure.zero()).middle;
+	};
 
-	return s ;
+	IndOrdSeq.prototype.splitAt = function (index) {
+		return this.split((m) =&gt; m[1] &gt; index);
+	};
 
-} ;
-
-IndOrdSeq.prototype.len = function ( ) {
-	return this.tree.measure( )[1] ;
-} ;
-
-IndOrdSeq.prototype.get = function ( index ) {
-
-	if ( index &lt; 0 || index &gt;= this.len( ) ) throw new Error( `wrong index &apos;${index}&apos;` ) ;
-
-	return this.tree.splitTree( m =&gt; m[1] &gt; index , measure.zero( ) ).middle ;
-
-} ;
-
-IndOrdSeq.prototype.splitAt = function ( index ) {
-	return this.split( m =&gt; m[1] &gt; index ) ;
-} ;
-
-return {
-	empty : ( ) =&gt; new IndOrdSeq( empty( measure ) ) ,
-	from : ( iterable ) =&gt; new IndOrdSeq( empty( measure ) ).insertValues( iterable )
-} ;
-
+	return {
+		empty: () =&gt; new IndOrdSeq(empty(measure)),
+		from: (iterable) =&gt; new IndOrdSeq(empty(measure)).insertValues(iterable),
+	};
 }
 </code></pre>
 
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

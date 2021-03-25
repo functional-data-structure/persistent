@@ -3,16 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/ordseq.js | aureooms/js-persistent API Document</title>
+  <title data-ice="title">src/ordseq.js | @aureooms/js-persistent</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-<script data-ice="userScript" src="user/script/0-header.js"></script>
-<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
-</head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Persistent data structures for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-persistent"><meta property="twitter:description" content="Persistent data structures for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -20,8 +16,7 @@
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  <a href="test.html" data-ice="testLink">Test</a>
-  <a data-ice="repoURL" href="https://github.com/aureooms/js-persistent.git" class="repo-url-github">Repository</a>
+  
   <div class="search-box">
   <span>
     <img src="./image/search.png">
@@ -29,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-persistent"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -44,113 +39,104 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/ordseq.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
-export function ordseq ( empty , key ) {
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export function ordseq(empty, key) {
+	// Probably needs a total order instead of a key measure
+	// this causes generality problems in the insert, merge, partition and delete
+	// methods
 
-// probably needs a total order instead of a key measure
-// this causes generality problems in the insert, merge, partition and delete
-// methods
+	const OrdSeq = function (tree) {
+		this.tree = tree;
+	};
 
-const OrdSeq = function ( tree ) {
-	this.tree = tree ;
-} ;
+	OrdSeq.prototype.isEmpty = function () {
+		return this.tree.isEmpty();
+	};
 
-OrdSeq.prototype.empty = function ( ) {
-	return this.tree.empty( ) ;
-} ;
+	OrdSeq.prototype.measure = function () {
+		return this.tree.measure();
+	};
 
-OrdSeq.prototype.measure = function ( ) {
-	return this.tree.measure( ) ;
-} ;
+	OrdSeq.prototype.min = OrdSeq.prototype.head = function () {
+		return this.tree.head();
+	};
 
-OrdSeq.prototype.min =
-OrdSeq.prototype.head = function ( ) {
-	return this.tree.head( ) ;
-} ;
+	OrdSeq.prototype.tail = function () {
+		return new OrdSeq(this.tree.tail());
+	};
 
-OrdSeq.prototype.tail = function ( ) {
-	return new OrdSeq( this.tree.tail( ) ) ;
-} ;
+	OrdSeq.prototype.max = OrdSeq.prototype.last = function () {
+		return this.tree.last();
+	};
 
-OrdSeq.prototype.max =
-OrdSeq.prototype.last = function ( ) {
-	return this.tree.last( ) ;
-} ;
+	OrdSeq.prototype.init = function () {
+		return new OrdSeq(this.tree.init());
+	};
 
-OrdSeq.prototype.init = function ( ) {
-	return new OrdSeq( this.tree.init( ) ) ;
-} ;
+	OrdSeq.prototype.takeUntil = function (predicate) {
+		return new OrdSeq(this.tree.takeUntil(predicate));
+	};
 
-OrdSeq.prototype.takeUntil = function ( predicate ) {
-	return new OrdSeq( this.tree.takeUntil( predicate ) ) ;
-} ;
+	OrdSeq.prototype.dropUntil = function (predicate) {
+		return new OrdSeq(this.tree.dropUntil(predicate));
+	};
 
-OrdSeq.prototype.dropUntil = function ( predicate ) {
-	return new OrdSeq( this.tree.dropUntil( predicate ) ) ;
-} ;
+	OrdSeq.prototype[Symbol.iterator] = function () {
+		return this.tree[Symbol.iterator]();
+	};
 
-OrdSeq.prototype[Symbol.iterator] = function ( ) {
-	return this.tree[Symbol.iterator]( ) ;
-} ;
+	OrdSeq.prototype.split = function (predicate) {
+		const [left, right] = this.tree.split(predicate);
+		return [new OrdSeq(left), new OrdSeq(right)];
+	};
 
-OrdSeq.prototype.split = function ( predicate ) {
-	const [ left , right ] = this.tree.split( predicate ) ;
-	return [ new OrdSeq( left ) , new OrdSeq( right ) ] ;
-} ;
+	OrdSeq.prototype.partition = function (value) {
+		const k = key.measure(value);
+		return this.split((m) =&gt; m &gt;= k);
+	};
 
-OrdSeq.prototype.partition = function ( value ) {
-	const k = key.measure( value ) ;
-	return this.split( ( m ) =&gt; m &gt;= k ) ;
-} ;
+	OrdSeq.prototype.insert = function (value) {
+		const k = key.measure(value);
+		const [left, right] = this.tree.split((m) =&gt; m &gt;= k);
+		return new OrdSeq(left.push(value).concat(right));
+	};
 
-OrdSeq.prototype.insert = function ( value ) {
-	const k = key.measure( value ) ;
-	const [ left , right ] = this.tree.split( ( m ) =&gt; m &gt;= k ) ;
-	return new OrdSeq( left.push( value ).concat( right ) ) ;
-} ;
+	OrdSeq.prototype.deleteAll = function (value) {
+		const k = key.measure(value);
+		const [l, r] = this.tree.split((m) =&gt; m &gt;= k);
+		const [, R] = r.split((m) =&gt; m &gt; k);
+		return new OrdSeq(l.concat(R));
+	};
 
-OrdSeq.prototype.deleteAll = function ( value ) {
-	const k = key.measure( value ) ;
-	const [ l , r ] = this.tree.split( ( m ) =&gt; m &gt;= k ) ;
-	const [ _ , R ] = r.split( ( m ) =&gt; m &gt; k ) ;
-	return new OrdSeq( l.concat( R ) ) ;
-} ;
+	OrdSeq.prototype.merge = function (other) {
+		if (other.isEmpty()) return this;
 
-OrdSeq.prototype.merge = function ( other ) {
+		const a = other.head();
+		const k = key.measure(a);
 
-	if ( other.empty( ) ) return this ;
+		const [l, r] = this.split((m) =&gt; m &gt; k);
 
-	const a = other.head( ) ;
-	const k = key.measure( a ) ;
+		return new OrdSeq(l.tree.push(a).concat(r.merge(other.tail()).tree));
+	};
 
-	const [ l , r ] = this.split( ( m ) =&gt; m &gt; k ) ;
+	OrdSeq.prototype.insertValues = function (values) {
+		let s = this;
 
-	return new OrdSeq( l.tree.push( a ).concat( r.merge( other.tail( ) ).tree ) ) ;
+		for (const value of values) s = s.insert(value);
 
-} ;
+		return s;
+	};
 
-OrdSeq.prototype.insertValues = function ( values ) {
-
-	let s = this ;
-
-	for ( const value of values ) s = s.insert( value ) ;
-
-	return s ;
-
-} ;
-
-return {
-	empty : ( ) =&gt; new OrdSeq( empty( key ) ) ,
-	from : ( iterable ) =&gt; new OrdSeq( empty( key ) ).insertValues( iterable )
-} ;
-
+	return {
+		empty: () =&gt; new OrdSeq(empty(key)),
+		from: (iterable) =&gt; new OrdSeq(empty(key)).insertValues(iterable),
+	};
 }
 </code></pre>
 
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>
