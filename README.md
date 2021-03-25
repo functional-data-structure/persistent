@@ -1,4 +1,5 @@
-[js-persistent](http://aureooms.github.io/js-persistent)
+:evergreen_tree:
+[@aureooms/js-persistent](http://aureooms.github.io/js-persistent)
 ==
 
 Persistent data structures code bricks for JavaScript. Parent is [aureooms/js-data-structures](https://github.com/aureooms/js-data-structures).
@@ -28,14 +29,14 @@ let IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-persistent)](https://bundlephobia.com/result?p=@aureooms/js-persistent)
 
 
-## Children
+## :baby: Children
 
-This package has several children:
+This package has one child:
 
-  - [aureooms/js-fingertree](https://github.com/aureooms/js-fingertree): Finger tree data structure for JavaScript
+  - :cactus: [@aureooms/js-fingertree](https://github.com/aureooms/js-fingertree): Finger tree data structure for JavaScript
 
 
-## References
+## :scroll: References
 
   - [Hinze and Paterson](http://staff.city.ac.uk/~ross/papers/FingerTree.pdf)
 
