@@ -19,6 +19,7 @@
     "persistent",
     "structures"
   ],
+  "sideEffects": false,
   "main": "lib/index.js",
   "files": [
     "lib"
