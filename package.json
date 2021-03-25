@@ -105,6 +105,17 @@
       ]
     ],
     "env": {
+      "debug": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "targets": "current node"
+            }
+          ],
+          "babel-preset-power-assert"
+        ]
+      },
       "test": {
         "presets": [
           "babel-preset-power-assert"
@@ -156,17 +167,6 @@
           ]
         ],
         "sourceMaps": "inline"
-      },
-      "debug": {
-        "presets": [
-          [
-            "@babel/preset-env",
-            {
-              "targets": "current node"
-            }
-          ],
-          "babel-preset-power-assert"
-        ]
       }
     }
   }
