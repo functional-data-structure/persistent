@@ -27,7 +27,6 @@
     "build": "babel --delete-dir-on-start --env-name production src -d lib",
     "build-docs": "esdoc",
     "cover": "c8 --all --src src --reporter=lcov npm test",
-    "esdoc": "esdoc",
     "lint-config": "fixpack --dryRun",
     "lint-config-and-fix": "fixpack || fixpack",
     "prepare": "npm run build",
