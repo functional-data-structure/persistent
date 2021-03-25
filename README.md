@@ -1,5 +1,5 @@
 :evergreen_tree:
-[@aureooms/js-persistent](http://aureooms.github.io/js-persistent)
+[@aureooms/js-persistent](https://aureooms.github.io/js-persistent)
 ==
 
 Persistent data structures code bricks for JavaScript. Parent is [aureooms/js-data-structures](https://github.com/aureooms/js-data-structures).
@@ -25,7 +25,7 @@ let IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;
 [![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-persistent.svg)](https://codeclimate.com/github/aureooms/js-persistent/trends/churn)
 [![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-persistent/main.svg)](https://codecov.io/gh/aureooms/js-persistent)
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-persistent.svg)](https://codeclimate.com/github/aureooms/js-persistent/trends/technical_debt)
-[![Documentation](http://aureooms.github.io/js-persistent/badge.svg)](http://aureooms.github.io/js-persistent/source.html)
+[![Documentation](https://aureooms.github.io/js-persistent/badge.svg)](https://aureooms.github.io/js-persistent/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-persistent)](https://bundlephobia.com/result?p=@aureooms/js-persistent)
 
 
