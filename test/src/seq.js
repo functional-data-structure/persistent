@@ -4,7 +4,7 @@ import { Measures } from '@aureooms/js-measure' ;
 import { gt } from '@aureooms/js-predicate' ;
 import { list, range } from '@aureooms/js-itertools' ;
 import { empty } from '@aureooms/js-fingertree' ;
-import { seq } from '../../src' ;
+import { seq } from "../../src/index.js" ;
 
 const Seq = seq( empty , Measures.SIZE ) ;
 

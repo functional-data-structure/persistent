@@ -3,7 +3,7 @@ import test from 'ava' ;
 import { Measures } from '@aureooms/js-measure' ;
 import { list } from '@aureooms/js-itertools' ;
 import { empty } from '@aureooms/js-fingertree' ;
-import { indordseq } from '../../src' ;
+import { indordseq } from "../../src/index.js" ;
 
 const { KEY , LEN , KEY_LEN } = Measures ;
 

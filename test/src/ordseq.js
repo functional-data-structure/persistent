@@ -4,7 +4,7 @@ import { Measures } from '@aureooms/js-measure' ;
 import { ge } from '@aureooms/js-predicate' ;
 import { list } from '@aureooms/js-itertools' ;
 import { empty } from '@aureooms/js-fingertree' ;
-import { ordseq } from '../../src' ;
+import { ordseq } from "../../src/index.js" ;
 
 const OrdSeq = ordseq( empty , Measures.KEY ) ;
 

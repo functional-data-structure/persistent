@@ -3,7 +3,7 @@ import test from 'ava' ;
 import { Measures } from '@aureooms/js-measure' ;
 import { list } from '@aureooms/js-itertools' ;
 import { empty } from '@aureooms/js-fingertree' ;
-import { intervaltree } from '../../src' ;
+import { intervaltree } from "../../src/index.js" ;
 
 const IntervalTree = intervaltree( empty , Measures.INTERVAL ) ;
 

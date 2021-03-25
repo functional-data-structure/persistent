@@ -2,7 +2,7 @@ import test from 'ava' ;
 
 import { Measures } from '@aureooms/js-measure' ;
 import { empty } from '@aureooms/js-fingertree' ;
-import { heap } from '../../src' ;
+import { heap } from "../../src/index.js" ;
 
 const Heap = heap( empty , Measures.PRIO ) ;
 

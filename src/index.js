@@ -1,5 +1,5 @@
-export * from './heap' ;
-export * from './indordseq' ;
-export * from './intervaltree' ;
-export * from './ordseq' ;
-export * from './seq' ;
+export * from "./heap.js" ;
+export * from "./indordseq.js" ;
+export * from "./intervaltree.js" ;
+export * from "./ordseq.js" ;
+export * from "./seq.js" ;
