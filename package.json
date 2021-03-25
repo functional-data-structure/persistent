@@ -190,6 +190,8 @@
       "camelcase": "off",
       "unicorn/prevent-abbreviations": "off",
       "no-constant-condition": "off",
+      "no-multi-assign": "off",
+      "unicorn/no-this-assignment": "off",
       "unicorn/prefer-math-trunc": "off",
       "unicorn/no-new-array": "off",
       "no-negated-condition": "off"
