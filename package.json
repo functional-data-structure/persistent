@@ -144,7 +144,8 @@
           ]
         ],
         "sourceMaps": "inline"
-      }
+      },
+      "debug": {}
     }
   }
 }
