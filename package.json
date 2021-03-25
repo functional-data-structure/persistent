@@ -97,7 +97,8 @@
     "np": "7.4.0",
     "nyc": "15.1.0",
     "power-assert": "1.6.1",
-    "regenerator-runtime": "0.13.7"
+    "regenerator-runtime": "0.13.7",
+    "fixpack": "4.0.0"
   },
   "files": [
     "lib"
