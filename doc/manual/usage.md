@@ -4,7 +4,7 @@ The code needs a ES2015+ polyfill to work, for example
 ```js
 require( 'regenerator-runtime/runtime' ) ;
 // or
-import 'regenerator-runtime/runtime' ;
+import 'regenerator-runtime/runtime.js' ;
 ```
 
 Then
