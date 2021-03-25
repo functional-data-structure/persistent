@@ -15,7 +15,7 @@ let IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;
 
 [![License](https://img.shields.io/github/license/aureooms/js-persistent.svg)](https://raw.githubusercontent.com/aureooms/js-persistent/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@aureooms/js-persistent.svg)](https://www.npmjs.org/package/@aureooms/js-persistent)
-[![Build](https://img.shields.io/travis/aureooms/js-persistent/main.svg)](https://travis-ci.org/aureooms/js-persistent/branches)
+[![Build](https://img.shields.io/travis/aureooms/js-persistent/main.svg)](https://travis-ci.com/aureooms/js-persistent/branches)
 [![Dependencies](https://img.shields.io/david/aureooms/js-persistent.svg)](https://david-dm.org/aureooms/js-persistent)
 [![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-persistent.svg)](https://david-dm.org/aureooms/js-persistent?type=dev)
 [![GitHub issues](https://img.shields.io/github/issues/aureooms/js-persistent.svg)](https://github.com/aureooms/js-persistent/issues)
