@@ -9,7 +9,7 @@ import 'regenerator-runtime/runtime.js' ;
 
 Then
 ```js
-const persistent = require( '@aureooms/js-persistent' ) ;
+const persistent = require( '@functional-data-structure/persistent' ) ;
 // or
-import persistent from '@aureooms/js-persistent' ;
+import persistent from '@functional-data-structure/persistent' ;
 ```

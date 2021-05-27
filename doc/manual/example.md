@@ -2,7 +2,7 @@
 ```js
 import { Measures } from '@functional-abstraction/measure' ;
 import { empty } from '@functional-data-structure/finger-tree' ;
-import persistent from '@aureooms/js-persistent' ;
+import persistent from '@functional-data-structure/persistent' ;
 
 let Seq = persistent.seq( empty , Measures.LEN ) ;
 let Heap = persistent.heap( empty , Measures.MAX ) ;

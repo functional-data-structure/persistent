@@ -1,8 +1,8 @@
 :evergreen_tree:
-[@aureooms/js-persistent](https://make-github-pseudonymous-again.github.io/js-persistent)
+[@functional-data-structure/persistent](https://functional-data-structure.github.io/persistent)
 ==
 
-Persistent data structures code bricks for JavaScript. Parent is [aureooms/js-data-structures](https://github.com/make-github-pseudonymous-again/js-data-structures).
+Persistent data structures code bricks for JavaScript. Parent is [js-data-structures](https://github.com/make-github-pseudonymous-again/js-data-structures).
 
 ```js
 let Seq = persistent.seq( fingertree.empty , LEN ) ;
@@ -13,27 +13,27 @@ let IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;
 ```
 
 
-[![License](https://img.shields.io/github/license/make-github-pseudonymous-again/js-persistent.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/js-persistent/main/LICENSE)
-[![Version](https://img.shields.io/npm/v/@aureooms/js-persistent.svg)](https://www.npmjs.org/package/@aureooms/js-persistent)
-[![Tests](https://img.shields.io/github/workflow/status/make-github-pseudonymous-again/js-persistent/ci:test?event=push&label=tests)](https://github.com/make-github-pseudonymous-again/js-persistent/actions/workflows/ci:test.yml?query=branch:main)
-[![Dependencies](https://img.shields.io/david/make-github-pseudonymous-again/js-persistent.svg)](https://david-dm.org/make-github-pseudonymous-again/js-persistent)
-[![Dev dependencies](https://img.shields.io/david/dev/make-github-pseudonymous-again/js-persistent.svg)](https://david-dm.org/make-github-pseudonymous-again/js-persistent?type=dev)
-[![GitHub issues](https://img.shields.io/github/issues/make-github-pseudonymous-again/js-persistent.svg)](https://github.com/make-github-pseudonymous-again/js-persistent/issues)
-[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-persistent.svg)](https://www.npmjs.org/package/@aureooms/js-persistent)
+[![License](https://img.shields.io/github/license/functional-data-structure/persistent.svg)](https://raw.githubusercontent.com/functional-data-structure/persistent/main/LICENSE)
+[![Version](https://img.shields.io/npm/v/@functional-data-structure/persistent.svg)](https://www.npmjs.org/package/@functional-data-structure/persistent)
+[![Tests](https://img.shields.io/github/workflow/status/functional-data-structure/persistent/ci:test?event=push&label=tests)](https://github.com/functional-data-structure/persistent/actions/workflows/ci:test.yml?query=branch:main)
+[![Dependencies](https://img.shields.io/david/functional-data-structure/persistent.svg)](https://david-dm.org/functional-data-structure/persistent)
+[![Dev dependencies](https://img.shields.io/david/dev/functional-data-structure/persistent.svg)](https://david-dm.org/functional-data-structure/persistent?type=dev)
+[![GitHub issues](https://img.shields.io/github/issues/functional-data-structure/persistent.svg)](https://github.com/functional-data-structure/persistent/issues)
+[![Downloads](https://img.shields.io/npm/dm/@functional-data-structure/persistent.svg)](https://www.npmjs.org/package/@functional-data-structure/persistent)
 
-[![Code issues](https://img.shields.io/codeclimate/issues/make-github-pseudonymous-again/js-persistent.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-persistent/issues)
-[![Code maintainability](https://img.shields.io/codeclimate/maintainability/make-github-pseudonymous-again/js-persistent.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-persistent/trends/churn)
-[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/make-github-pseudonymous-again/js-persistent/main.svg)](https://codecov.io/gh/make-github-pseudonymous-again/js-persistent)
-[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/make-github-pseudonymous-again/js-persistent.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-persistent/trends/technical_debt)
-[![Documentation](https://make-github-pseudonymous-again.github.io/js-persistent/badge.svg)](https://make-github-pseudonymous-again.github.io/js-persistent/source.html)
-[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-persistent)](https://bundlephobia.com/result?p=@aureooms/js-persistent)
+[![Code issues](https://img.shields.io/codeclimate/issues/functional-data-structure/persistent.svg)](https://codeclimate.com/github/functional-data-structure/persistent/issues)
+[![Code maintainability](https://img.shields.io/codeclimate/maintainability/functional-data-structure/persistent.svg)](https://codeclimate.com/github/functional-data-structure/persistent/trends/churn)
+[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/functional-data-structure/persistent/main.svg)](https://codecov.io/gh/functional-data-structure/persistent)
+[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/functional-data-structure/persistent.svg)](https://codeclimate.com/github/functional-data-structure/persistent/trends/technical_debt)
+[![Documentation](https://functional-data-structure.github.io/persistent/badge.svg)](https://functional-data-structure.github.io/persistent/source.html)
+[![Package size](https://img.shields.io/bundlephobia/minzip/@functional-data-structure/persistent)](https://bundlephobia.com/result?p=@functional-data-structure/persistent)
 
 
 ## :baby: Children
 
 This package has one child:
 
-  - :cactus: [@functional-data-structure/finger-tree](https://github.com/make-github-pseudonymous-again/js-fingertree): Finger tree data structure for JavaScript
+  - :cactus: [@functional-data-structure/finger-tree](https://github.com/functional-data-structure/finger-tree): Finger tree data structure for JavaScript
 
 
 ## :scroll: References

@@ -5,10 +5,10 @@ or [npm](https://github.com/npm/npm).
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-persistent
+jspm install npm:@functional-data-structure/persistent
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-persistent --save
+npm install @functional-data-structure/persistent --save
 ```

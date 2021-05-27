@@ -1,16 +1,16 @@
 {
-  "name": "@aureooms/js-persistent",
+  "name": "@functional-data-structure/persistent",
   "description": "Persistent data structures for JavaScript",
   "version": "3.0.0",
   "license": "AGPL-3.0",
-  "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
-  "homepage": "https://make-github-pseudonymous-again.github.io/js-persistent",
+  "author": "make-github-pseudonymous-again",
+  "homepage": "https://functional-data-structure.github.io/persistent",
   "repository": {
     "type": "git",
-    "url": "https://github.com/make-github-pseudonymous-again/js-persistent"
+    "url": "https://github.com/functional-data-structure/persistent"
   },
   "bugs": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-persistent/issues"
+    "url": "https://github.com/functional-data-structure/persistent/issues"
   },
   "keywords": [
     "data",
