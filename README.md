@@ -33,7 +33,7 @@ let IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;
 
 This package has one child:
 
-  - :cactus: [@aureooms/js-fingertree](https://github.com/make-github-pseudonymous-again/js-fingertree): Finger tree data structure for JavaScript
+  - :cactus: [@functional-data-structure/finger-tree](https://github.com/make-github-pseudonymous-again/js-fingertree): Finger tree data structure for JavaScript
 
 
 ## :scroll: References

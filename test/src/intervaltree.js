@@ -1,8 +1,8 @@
 import test from 'ava';
 
-import {Measures} from '@aureooms/js-measure';
-import {list} from '@aureooms/js-itertools';
-import {empty} from '@aureooms/js-fingertree';
+import {Measures} from '@functional-abstraction/measure';
+import {list} from '@iterable-iterator/list';
+import {empty} from '@functional-data-structure/finger-tree';
 import {intervaltree} from '../../src/index.js';
 
 const IntervalTree = intervaltree(empty, Measures.INTERVAL);

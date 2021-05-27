@@ -1,9 +1,10 @@
 import test from 'ava';
 
-import {Measures} from '@aureooms/js-measure';
-import {gt} from '@aureooms/js-predicate';
-import {list, range} from '@aureooms/js-itertools';
-import {empty} from '@aureooms/js-fingertree';
+import {Measures} from '@functional-abstraction/measure';
+import {gt} from '@functional-abstraction/predicate';
+import {list} from '@iterable-iterator/list';
+import {range} from '@iterable-iterator/range';
+import {empty} from '@functional-data-structure/finger-tree';
 import {seq} from '../../src/index.js';
 
 const Seq = seq(empty, Measures.SIZE);
@@ -64,7 +65,7 @@ test('seq', (t) => {
 	t.throws(s.set.bind(s, list(s).length, 'Z'), {message: /index/});
 });
 
-test('@aureooms/js-fingertree github issue #73', (t) => {
+test('@functional-data-structure/finger-tree github issue #73', (t) => {
 	let s = Seq.from('abcde');
 
 	for (const x of range(26)) {

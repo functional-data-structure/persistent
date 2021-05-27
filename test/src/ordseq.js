@@ -1,9 +1,9 @@
 import test from 'ava';
 
-import {Measures} from '@aureooms/js-measure';
-import {ge} from '@aureooms/js-predicate';
-import {list} from '@aureooms/js-itertools';
-import {empty} from '@aureooms/js-fingertree';
+import {Measures} from '@functional-abstraction/measure';
+import {ge} from '@functional-abstraction/predicate';
+import {list} from '@iterable-iterator/list';
+import {empty} from '@functional-data-structure/finger-tree';
 import {ordseq} from '../../src/index.js';
 
 const OrdSeq = ordseq(empty, Measures.KEY);

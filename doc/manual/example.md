@@ -1,7 +1,7 @@
 # Examples
 ```js
-import { Measures } from '@aureooms/js-measure' ;
-import { empty } from '@aureooms/js-fingertree' ;
+import { Measures } from '@functional-abstraction/measure' ;
+import { empty } from '@functional-data-structure/finger-tree' ;
 import persistent from '@aureooms/js-persistent' ;
 
 let Seq = persistent.seq( empty , Measures.LEN ) ;
