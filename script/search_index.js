@@ -1,32 +1,32 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-persistent/src/heap.js~heap",
+    "@functional-data-structure/persistent/src/heap.js~heap",
     "function/index.html#static-function-heap",
-    "<span>heap</span> <span class=\"search-result-import-path\">@aureooms/js-persistent/src/heap.js</span>",
+    "<span>heap</span> <span class=\"search-result-import-path\">@functional-data-structure/persistent/src/heap.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-persistent/src/indordseq.js~indordseq",
+    "@functional-data-structure/persistent/src/indordseq.js~indordseq",
     "function/index.html#static-function-indordseq",
-    "<span>indordseq</span> <span class=\"search-result-import-path\">@aureooms/js-persistent/src/indordseq.js</span>",
+    "<span>indordseq</span> <span class=\"search-result-import-path\">@functional-data-structure/persistent/src/indordseq.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-persistent/src/intervaltree.js~intervaltree",
+    "@functional-data-structure/persistent/src/intervaltree.js~intervaltree",
     "function/index.html#static-function-intervaltree",
-    "<span>intervaltree</span> <span class=\"search-result-import-path\">@aureooms/js-persistent/src/intervaltree.js</span>",
+    "<span>intervaltree</span> <span class=\"search-result-import-path\">@functional-data-structure/persistent/src/intervaltree.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-persistent/src/ordseq.js~ordseq",
+    "@functional-data-structure/persistent/src/ordseq.js~ordseq",
     "function/index.html#static-function-ordseq",
-    "<span>ordseq</span> <span class=\"search-result-import-path\">@aureooms/js-persistent/src/ordseq.js</span>",
+    "<span>ordseq</span> <span class=\"search-result-import-path\">@functional-data-structure/persistent/src/ordseq.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-persistent/src/seq.js~seq",
+    "@functional-data-structure/persistent/src/seq.js~seq",
     "function/index.html#static-function-seq",
-    "<span>seq</span> <span class=\"search-result-import-path\">@aureooms/js-persistent/src/seq.js</span>",
+    "<span>seq</span> <span class=\"search-result-import-path\">@functional-data-structure/persistent/src/seq.js</span>",
     "function"
   ],
   [
