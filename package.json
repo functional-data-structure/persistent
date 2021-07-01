@@ -81,7 +81,7 @@
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
     "fixpack": "4.0.0",
-    "husky": "6.0.0",
+    "husky": "7.0.0",
     "lint-staged": "11.0.0",
     "microbundle": "0.13.3",
     "np": "7.5.0",
