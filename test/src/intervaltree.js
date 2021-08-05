@@ -65,25 +65,11 @@ test('intervaltree', (t) => {
 		[3, 9],
 		[4, 6],
 	]);
-	t.deepEqual(
-		list(
-			i.takeUntil((m) => {
-				return m[0] > 1;
-			}),
-		),
-		[[1, 7]],
-	);
-	t.deepEqual(
-		list(
-			i.dropUntil((m) => {
-				return m[0] > 1;
-			}),
-		),
-		[
-			[3, 9],
-			[4, 6],
-		],
-	);
+	t.deepEqual(list(i.takeUntil((m) => m[0] > 1)), [[1, 7]]);
+	t.deepEqual(list(i.dropUntil((m) => m[0] > 1)), [
+		[3, 9],
+		[4, 6],
+	]);
 	t.deepEqual(list(i.merge(i)), [
 		[1, 7],
 		[1, 7],
