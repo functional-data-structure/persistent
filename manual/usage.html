@@ -59,12 +59,12 @@
 
 <div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="usage">Usage</h1><p>The code needs a ES2015+ polyfill to work, for example
 <a href="https://babeljs.io/docs/usage/polyfill">regenerator-runtime/runtime</a>.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">require( &apos;regenerator-runtime/runtime&apos; ) ;
+<pre><code class="lang-js"><code class="source-code prettyprint">await import( &apos;regenerator-runtime/runtime.js&apos; ) ;
 // or
 import &apos;regenerator-runtime/runtime.js&apos; ;</code>
 </code></pre>
 <p>Then</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">const persistent = require( &apos;@functional-data-structure/persistent&apos; ) ;
+<pre><code class="lang-js"><code class="source-code prettyprint">const persistent = await import( &apos;@functional-data-structure/persistent&apos; ) ;
 // or
 import persistent from &apos;@functional-data-structure/persistent&apos; ;</code>
 </code></pre>
