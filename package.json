@@ -75,7 +75,7 @@
     "@js-library/commitlint-config": "0.0.4",
     "ava": "3.15.0",
     "babel-plugin-transform-remove-console": "6.9.4",
-    "babel-plugin-unassert": "3.1.0",
+    "babel-plugin-unassert": "3.2.0",
     "babel-preset-power-assert": "3.0.0",
     "c8": "7.10.0",
     "esdoc": "1.1.0",
