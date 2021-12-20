@@ -69,7 +69,7 @@ test('@functional-data-structure/finger-tree github issue #73', (t) => {
 	let s = Seq.from('abcde');
 
 	for (const x of range(26)) {
-		const c = String.fromCharCode(87 + x);
+		const c = String.fromCodePoint(87 + x);
 		s = s.set(2, c);
 		t.deepEqual(list(s), list('ab' + c + 'de'));
 	}
