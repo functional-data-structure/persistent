@@ -86,7 +86,7 @@
     "husky": "7.0.4",
     "lint-staged": "12.3.7",
     "microbundle": "0.14.2",
-    "np": "7.6.0",
+    "np": "7.6.1",
     "pinst": "3.0.0",
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.13.9",
