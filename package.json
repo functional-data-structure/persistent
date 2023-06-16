@@ -73,7 +73,7 @@
     "@iterable-iterator/list": "1.0.1",
     "@iterable-iterator/range": "2.1.0",
     "@js-library/commitlint-config": "0.0.4",
-    "ava": "5.3.0",
+    "ava": "5.3.1",
     "babel-plugin-transform-remove-console": "6.9.4",
     "babel-plugin-unassert": "3.2.0",
     "babel-preset-power-assert": "3.0.0",
