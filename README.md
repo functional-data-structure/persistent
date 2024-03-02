@@ -15,7 +15,7 @@ let IntervalTree = persistent.intervaltree( fingertree.empty , INTERVAL ) ;
 
 [![License](https://img.shields.io/github/license/functional-data-structure/persistent.svg)](https://raw.githubusercontent.com/functional-data-structure/persistent/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@functional-data-structure/persistent.svg)](https://www.npmjs.org/package/@functional-data-structure/persistent)
-[![Tests](https://img.shields.io/github/workflow/status/functional-data-structure/persistent/ci:cover?event=push&label=tests)](https://github.com/functional-data-structure/persistent/actions/workflows/ci:cover.yml?query=branch:main)
+[![Tests](https://img.shields.io/github/workflow/status/functional-data-structure/persistent/ci?event=push&label=tests)](https://github.com/functional-data-structure/persistent/actions/workflows/ci.yml?query=branch:main)
 [![Dependencies](https://img.shields.io/librariesio/github/functional-data-structure/persistent.svg)](https://github.com/functional-data-structure/persistent/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/functional-data-structure/persistent.svg)](https://github.com/functional-data-structure/persistent/issues)
 [![Downloads](https://img.shields.io/npm/dm/@functional-data-structure/persistent.svg)](https://www.npmjs.org/package/@functional-data-structure/persistent)

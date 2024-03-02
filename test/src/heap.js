@@ -2,7 +2,7 @@ import test from 'ava';
 
 import {Measures} from '@functional-abstraction/measure';
 import {empty} from '@functional-data-structure/finger-tree';
-import {heap} from '../../src/index.js';
+import {heap} from '#module';
 
 const Heap = heap(empty, Measures.PRIO);
 

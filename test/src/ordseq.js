@@ -4,7 +4,7 @@ import {Measures} from '@functional-abstraction/measure';
 import {ge} from '@functional-abstraction/predicate';
 import {list} from '@iterable-iterator/list';
 import {empty} from '@functional-data-structure/finger-tree';
-import {ordseq} from '../../src/index.js';
+import {ordseq} from '#module';
 
 const OrdSeq = ordseq(empty, Measures.KEY);
 

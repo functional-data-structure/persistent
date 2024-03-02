@@ -5,7 +5,7 @@ import {gt} from '@functional-abstraction/predicate';
 import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
 import {empty} from '@functional-data-structure/finger-tree';
-import {seq} from '../../src/index.js';
+import {seq} from '#module';
 
 const Seq = seq(empty, Measures.SIZE);
 
