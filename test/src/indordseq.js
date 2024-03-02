@@ -1,8 +1,9 @@
 import test from 'ava';
 
 import {Measures} from '@functional-abstraction/measure';
-import {list} from '@iterable-iterator/list';
 import {empty} from '@functional-data-structure/finger-tree';
+import {list} from '@iterable-iterator/list';
+
 import {indordseq} from '#module';
 
 const {KEY, LEN, KEY_LEN} = Measures;

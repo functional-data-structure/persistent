@@ -2,9 +2,10 @@ import test from 'ava';
 
 import {Measures} from '@functional-abstraction/measure';
 import {gt} from '@functional-abstraction/predicate';
+import {empty} from '@functional-data-structure/finger-tree';
 import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
-import {empty} from '@functional-data-structure/finger-tree';
+
 import {seq} from '#module';
 
 const Seq = seq(empty, Measures.SIZE);
