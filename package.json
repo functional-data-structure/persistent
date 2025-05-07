@@ -93,7 +93,7 @@
     "esdoc-standard-plugin": "1.0.0",
     "fixpack": "4.0.0",
     "husky": "9.1.7",
-    "lint-staged": "15.5.1",
+    "lint-staged": "15.5.2",
     "microbundle": "0.15.1",
     "np": "10.2.0",
     "pinst": "3.0.0",
